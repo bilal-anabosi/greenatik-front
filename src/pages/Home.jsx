@@ -118,13 +118,13 @@ function Home() {
             <div className="col-8 col-lg-4 order-lg-2" style={{ marginTop: '-105px' }}>
               {/* Middle sticky app screen */}
               <div className="position-lg-sticky top-0 mb-5 pb-sm-2 pb-xl-4" style={{ paddingTop: 110 }}>
-                <img className="d-block mx-auto" src="/pics/Mobile-view1.png" width={322} alt="App screen" />
+                <img className="d-block mx-auto" src="https://i.postimg.cc/TYv3fnQ2/Mobile-view1.png" width={322} alt="App screen" />
               </div>
             </div>
             {/* Left column */}
             <div className="col-sm-6 col-lg-4 order-lg-1 overflow-hidden mt-lg-4 pt-xl-3">
               {/* Left app screen */}
-              <img className="d-none d-lg-block rounded-4 ms-auto " src="/pics/Mobile-view3.png" width={297} alt="App screen" style={{ boxShadow: '0 .9375rem 3rem -.5rem rgba(18,34,50, .05)' }} />
+              <img className="d-none d-lg-block rounded-4 ms-auto " src="https://i.postimg.cc/htS47gHH/mobile-view2.png" width={297} alt="App screen" style={{ boxShadow: '0 .9375rem 3rem -.5rem rgba(18,34,50, .05)' }} />
               <div className="d-none d-xxl-block" style={{ height: 310 }} />
               <div className="d-none d-xl-block d-xxl-none" style={{ height: 280 }} />
               <div className="d-none d-lg-block d-xl-none" style={{ height: 200 }} />
@@ -147,7 +147,7 @@ function Home() {
             {/* Right column */}
             <div className="col-sm-6 col-lg-4 order-lg-3 overflow-hidden mt-lg-0 pt-xl-0">
               {/* Right app screen */}
-              <img className="d-none d-lg-block rounded-4" src="/pics/Mobile-view2.png" width={297} alt="App screen" style={{ boxShadow: '0 .9375rem 3rem -.5rem rgba(18,34,50, .05)' }} />
+              <img className="d-none d-lg-block rounded-4" src="https://i.postimg.cc/rFGFmzY1/mobile-view3.png" width={297} alt="App screen" style={{ boxShadow: '0 .9375rem 3rem -.5rem rgba(18,34,50, .05)' }} />
               <div className="d-none d-xxl-block" style={{ height: 520 }} />
               <div className="d-none d-xl-block d-xxl-none" style={{ height: 490 }} />
               <div className="d-none d-lg-block d-xl-none" style={{ height: 400 }} />
