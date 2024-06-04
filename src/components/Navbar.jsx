@@ -211,7 +211,7 @@ function Navbar({ onRateChange }) {
                 </ul>
             </li>
             <li className="nav-item">
-            <Link className="nav-link" href="/all-posts">{t('navbar.recycling')}</Link>
+            <Link className="nav-link" to="/all-posts">{t('navbar.recycling')}</Link>
             </li>
             <li className="nav-item">
                 <a className="nav-link" href="/blog">{t('navbar.blogs')}</a>
