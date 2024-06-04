@@ -2,7 +2,7 @@ import React from 'react';
 import './Products.css';
 import { useState } from 'react';
 import { Modal } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 const Shopping = () => {
     const [showModal, setShowModal] = useState(false);
 
@@ -15,7 +15,7 @@ const Shopping = () => {
                             <div className="p-lg-5 p-0">
                                 <h2 className="mb-2 fw-bold">One Stop Natural Shop</h2>
                                 <p className="mb-3 lead">Shopping for your furry friend? Find Green,<br/> treats, and more in one easy spot.</p>
-                                <a className="btn btn-dark" onClick={() => setShowModal(true)}>Get Points</a>
+                                <Link className="btn btn-dark" onClick={() => setShowModal(true)}>Get Points</Link>
                             </div>
                         <div className="p-lg-4 d-lg-block d-none">
                     <img src="/pics/images/store.png" alt="..." className="img-fluid" />

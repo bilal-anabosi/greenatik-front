@@ -14,7 +14,7 @@ export default function ForgetForm() {
 
   const onSubmit = async (userData) => {
     try {
-      const { data,status } = await axios.patch(`http://localhost:4000/user/sendcode`, userData);
+      const { data,status } = await axios.patch(`${process.env.REACT_APP_GREENATIK}/user/sendcode`, userData);
       console.log(data);
 
       if (status === 200) {

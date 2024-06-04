@@ -14,7 +14,7 @@ const EditProductPage = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/products/${productId}`, {
+        const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/api/products/${productId}`, {
           headers: {
             Authorization: `group__${authToken}`
           }
@@ -86,7 +86,7 @@ const EditProductPage = () => {
         form.append('keepExistingImages', true);
       }
 
-      await axios.put(`http://localhost:4000/api/products/${productId}`, form, {
+      await axios.put(`${process.env.REACT_APP_GREENATIK}/api/products/${productId}`, form, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `group__${authToken}`

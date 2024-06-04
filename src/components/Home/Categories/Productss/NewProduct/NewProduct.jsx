@@ -10,7 +10,7 @@ const NewProduct = ({exchangeRate}) => {
         useEffect(() => {
             async function fetchLatestProducts() {
                 try {
-                    const response = await axios.get('http://localhost:4000/store/latest-products');
+                    const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/store/latest-products`);
                         setLatestProducts(response.data.latestProducts);
             } 
             catch (error) {

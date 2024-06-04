@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import './Formss.css';
 import axios from 'axios';
 import Map from './Map';
-
+import { Link } from 'react-router-dom';
 const FormII = ({postId}) => {
     const [material, setMaterial] = useState('');
     const [quantity, setQuantity] = useState('');
@@ -32,7 +32,7 @@ const FormII = ({postId}) => {
     useEffect(() => {
         const fetchPostDetails = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/singlepost/${postId}`);
+                const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/singlepost/${postId}`);
                 if (response.data) {
                     setMaxQuantity(response.data.quantity-response.data.provided);
 
@@ -116,7 +116,7 @@ const FormII = ({postId}) => {
             console.log(token);
 
             // Submit contribution data to the server with token
-            const response = await axios.post(`http://localhost:4000/singlepost/${postId}/contributions`, contributionData, {
+            const response = await axios.post(`${process.env.REACT_APP_GREENATIK}/singlepost/${postId}/contributions`, contributionData, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization':  `group__${token}` // user Token
@@ -345,7 +345,7 @@ const FormII = ({postId}) => {
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" color='#333333CC' fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
                             </svg> 
-                            <span className="t-text">By clicking submit it means you agree to our <a href="# ">terms and conditions</a></span>
+                            <span className="t-text">By clicking submit it means you agree to our <Link to="# ">terms and conditions</Link></span>
                         </div>
                     </div>
                     <Map locationUrl={locationUrl}  />

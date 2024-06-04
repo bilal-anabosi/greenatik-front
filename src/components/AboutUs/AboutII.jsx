@@ -16,8 +16,8 @@ function AboutII() {
                                 <div className="h-100">
                                     <div className="title text-start p-0">
                                         <span className="pre-title">Ok! So Who We Are?</span>
-                                        <h2 className="text-white">GreeNatik is a dedicated team of environmental enthusiasts, engineers, and educators committed to making a positive impact on the environment. </h2>
-                                        <p>With years of experience in the recycling and sustainability sector, we bring expertise and innovation to every project we undertake. In addition to our commitment to environmental initiatives, we are proud to offer a range of eco-friendly products.</p>
+                                        <h2 className="text-white">GreeNatik is Link dedicated team of environmental enthusiasts, engineers, and educators committed to making Link positive impact on the environment. </h2>
+                                        <p>With years of experience in the recycling and sustainability sector, we bring expertise and innovation to every project we undertake. In addition to our commitment to environmental initiatives, we are proud to offer Link range of eco-friendly products.</p>
                                     </div>
                                     <div className="row">
                                     </div>
@@ -32,7 +32,7 @@ function AboutII() {
                                         <span className="pre-title">Ok! So why our client trust us?</span>
                                         <h2>From reusable bags to sustainable packaging solutions, our products are carefully curated to align with our mission of promoting sustainability and reducing environmental impact.</h2>
                                         <hr />
-                                        <h1>With GreeNatik, you not only support our efforts in recycling and sustainability but also contribute to creating a greener and more sustainable future through your everyday choices.</h1>
+                                        <h1>With GreeNatik, you not only support our efforts in recycling and sustainability but also contribute to creating Link greener and more sustainable future through your everyday choices.</h1>
                                     </div>
                                 </div>
                             </div>

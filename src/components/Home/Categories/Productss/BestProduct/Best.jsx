@@ -14,7 +14,7 @@ const Best = ({exchangeRate}) => {
     useEffect(() => {
       async function fetchtopSellingProducts() {
         try {
-          const response = await axios.get('http://localhost:4000/store/top-products');
+          const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/store/top-products`);
           settopSellingProducts(response.data.topSellingProducts);
         } catch (error) {
           console.error('Error fetching top selling products sale:', error);

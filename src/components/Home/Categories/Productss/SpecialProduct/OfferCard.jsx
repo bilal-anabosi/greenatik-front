@@ -4,6 +4,7 @@ import '../Products.css';
 import ProductCards from '../../../../wide/ProductCards';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const OfferCard = ( {exchangeRate}) => {
 
@@ -12,7 +13,7 @@ const OfferCard = ( {exchangeRate}) => {
     useEffect(() => {
         async function fetchLatestProductsWithSale() {
         try {
-            const response = await axios.get('http://localhost:4000/store/sale-products');
+            const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/store/sale-products`);
             setLatestProductsWithSale(response.data.latestProductsWithSale);
         } 
         catch (error) {
@@ -41,10 +42,10 @@ return (
                                 <p>Get exclusive ongoing offers, deals, and discount codes of shopping</p>
                             </div>
                         <div>
-                        <a href="# " className="custom-view-all-link" onClick={() => handleCategoryClick('Sale')}>
+                        <Link to="# " className="custom-view-all-link" onClick={() => handleCategoryClick('Sale')}>
                             View All
                         <i className="feather-icon icon-chevron-right" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

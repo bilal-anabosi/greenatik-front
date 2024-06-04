@@ -14,7 +14,7 @@ const SetPasswordForm = () => {
   const onSubmit = async (userData) => {
     try {
       const { data,status } = await axios.patch(
-        `http://localhost:4000/user/forgetpassword`,
+        `${process.env.REACT_APP_GREENATIK}/user/forgetpassword`,
         userData
       );
       console.log(data);

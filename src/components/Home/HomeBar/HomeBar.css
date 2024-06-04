@@ -4,7 +4,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     }
-.ss .breadcrumb-item :first-child a {
+.ss .breadcrumb-item :first-child Link {
     text-decoration: none; 
     color: #4EA933; 
     }

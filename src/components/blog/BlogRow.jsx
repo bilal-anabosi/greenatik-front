@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 const BlogRow = ({ cover, title, blogCategory, blogStatus, createdAt, blogId, onDelete }) => {
     return (
         <tr>
             <td>
-                <img src={`http://localhost:4000/${cover}`} alt="Cover" className="icon-shape icon-md" />
+                <img src={`${process.env.REACT_APP_GREENATIK}/${cover}`} alt="Cover" className="icon-shape icon-md" />
             </td>
-            <td><a href="#!" className="text-reset">{title}</a></td>
+            <td><Link to="#!" className="text-reset">{title}</Link></td>
             <td>{blogCategory.join(', ')}</td>
             <td>
                 <span className={`badge bg-light-${blogStatus === 'Active' ? 'primary' : blogStatus === 'Disabled' ? 'danger' : 'warning'} text-dark-${blogStatus === 'Active' ? 'primary' : blogStatus === 'Disabled' ? 'danger' : 'warning'}`}>{blogStatus}</span>

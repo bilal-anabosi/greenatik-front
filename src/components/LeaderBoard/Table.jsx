@@ -14,7 +14,7 @@ const Table = ({ data }) => {
           return;
         }
 
-        const response = await fetch('http://localhost:4000/leaderboard/position', {
+        const response = await fetch(`${process.env.REACT_APP_GREENATIK}/leaderboard/position`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const Table = ({ data }) => {
   useEffect(() => {
     const fetchFilteredData = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/leaderboard/points/filter?filter=${filter}`);
+        const response = await fetch(`${process.env.REACT_APP_GREENATIK}/leaderboard/points/filter?filter=${filter}`);
         if (response.ok) {
           const data = await response.json();
           setFilteredData(data);

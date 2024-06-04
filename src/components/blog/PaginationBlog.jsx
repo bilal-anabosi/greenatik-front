@@ -1,23 +1,23 @@
 
-
+import { Link } from 'react-router-dom';
 function PaginationBlog() {
   return (
     <div className="col-12">
       <nav>
         <ul className="pagination">
           <li className="page-item disabled">
-            <a className="page-link mx-1" href="#!" aria-label="Previous">
+            <Link className="page-link mx-1" to="#!" aria-label="Previous">
               <i className="bi bi-chevron-left"></i>
-            </a>
+            </Link>
           </li>
-          <li className="page-item"><a className="page-link mx-1 active" href="#!">1</a></li>
-          <li className="page-item"><a className="page-link mx-1" href="#!">2</a></li>
-          <li className="page-item"><a className="page-link mx-1" href="#!">...</a></li>
-          <li className="page-item"><a className="page-link mx-1" href="#!">12</a></li>
+          <li className="page-item"><Link className="page-link mx-1 active" to="#!">1</Link></li>
+          <li className="page-item"><Link className="page-link mx-1" to="#!">2</Link></li>
+          <li className="page-item"><Link className="page-link mx-1" to="#!">...</Link></li>
+          <li className="page-item"><Link className="page-link mx-1" to="#!">12</Link></li>
           <li className="page-item">
-            <a className="page-link mx-1" href="#!" aria-label="Next">
+            <Link className="page-link mx-1" to="#!" aria-label="Next">
               <i className="bi bi-chevron-right"></i>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

@@ -15,11 +15,11 @@ function AboutIII() {
 <img src="/img/02.png" alt="..." className='ixx' />
             <div className="background-text">
                 <p>
-                    Join us in our mission to create a greener <br/> Whether you are looking to reduce your waste <br/> learn more about sustainability, <br/>
-                    or collaborate on a project, <br/> GreeNatik is here to help. <br/> Together, we can make a difference.
+                    Join us in our mission to create Link greener <br/> Whether you are looking to reduce your waste <br/> learn more about sustainability, <br/>
+                    or collaborate on Link project, <br/> GreeNatik is here to help. <br/> Together, we can make Link difference.
                 </p>
                 <h2>
-                Thank you for visiting GreeNatik. Let’s recycle and go green, one step at a time.
+                Thank you for visiting GreeNatik. Let’s recycle and go green, one step at Link time.
                 </h2>
             </div>
         </div>

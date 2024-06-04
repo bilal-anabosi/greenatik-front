@@ -21,7 +21,7 @@ const AllBlogsDash = () => {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/blogs/user-blogs', {
+                const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/blogs/user-blogs`, {
                     headers: {
                         Authorization: `group__${token}`
                     }
@@ -69,7 +69,7 @@ const AllBlogsDash = () => {
                                 <h1 className="fw-bold">My Blogs</h1>
                             </div>
                             <div className="col-lg-2 col-md-4 col-12">
-                                <a href="/dashboard/create-new-blog" className="btn btn-primary">Create New Blog</a>
+                                <Link to="/dashboard/create-new-blog" className="btn btn-primary">Create New Blog</Link>
                             </div>
                         </div>
                     </div>

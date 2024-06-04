@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 function AddressAccordion({ onUpdate }) {
   const [selectedAddress, setSelectedAddress] = useState(null);
   const [isAddAddressClicked, setIsAddAddressClicked] = useState(false);
@@ -112,13 +112,13 @@ function AddressAccordion({ onUpdate }) {
   return (
     <div className="accordion-item py-4">
       <div className="d-flex justify-content-between align-items-center">
-        <a href="#!!" className={`fs-5 text-inherit h4 ${isAddDeliveryAddressClicked ? 'text-success' : ''}`} data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne" onClick={handleAddDeliveryAddressClick}>
+        <Link to="#!!" className={`fs-5 text-inherit h4 ${isAddDeliveryAddressClicked ? 'text-success' : ''}`} data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne" onClick={handleAddDeliveryAddressClick}>
           <i className="bi bi-geo-alt" style={{ color: 'gray' }}></i>
           Add delivery address
-        </a>
-        <a href="#!" className={`btn ${isAddAddressClicked ? 'btn-primary' : 'btn-outline-primary'}`} onClick={handleAddAddressClick}>
+        </Link>
+        <Link to="#!" className={`btn ${isAddAddressClicked ? 'btn-primary' : 'btn-outline-primary'}`} onClick={handleAddAddressClick}>
           Add address
-        </a>
+        </Link>
       </div>
       {isAddAddressClicked && (
         <div className="modal fade show" id="addAddressModal" tabIndex="-1" aria-labelledby="addAddressModalLabel" style={{ display: 'block', padding: '0px' }} aria-modal="true" role="dialog">
@@ -227,7 +227,7 @@ function AddressAccordion({ onUpdate }) {
                   <abbr title="Phone">P: {address.phone}</abbr>
                 </address>
                 {selectedAddress === index && <span className="text-danger">Default address</span>}
-                <a href="#!" className="text-danger ms-3" data-bs-toggle="modal" data-bs-target="#deleteModal" onClick={() => setSelectedAddressForDeletion(index)}>Delete</a>
+                <Link to="#!" className="text-danger ms-3" data-bs-toggle="modal" data-bs-target="#deleteModal" onClick={() => setSelectedAddressForDeletion(index)}>Delete</Link>
               </div>
             </div>
           ))}

@@ -15,7 +15,7 @@ export default function LoginForm() {
 
   const onSubmit = async (userData) => {
     try {
-      const { data, status } = await axios.post(`http://localhost:4000/user/login`, userData);
+      const { data, status } = await axios.post(`${process.env.REACT_APP_GREENATIK}/user/login`, userData);
       console.log(data);
 
       if (status === 200) {

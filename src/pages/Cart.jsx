@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Product from "../components/Product";
-
+import { Link } from 'react-router-dom';
 const Cart = ({ exchangeRate }) => {
   const [cartItems, setCartItems] = useState([]);
   const token = localStorage.getItem("userToken");
@@ -15,7 +15,7 @@ const Cart = ({ exchangeRate }) => {
 
   const fetchCartItems = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/cart", {
+      const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/cart`, {
         headers: {
           Authorization: `group__${token}`,
         },
@@ -57,7 +57,7 @@ const Cart = ({ exchangeRate }) => {
   const addToCart = async (productId, quantity, size) => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/cart/add",
+        `${process.env.REACT_APP_GREENATIK}/cart/add`,
         {
           productId,
           quantity,
@@ -82,7 +82,7 @@ const Cart = ({ exchangeRate }) => {
 
   const removeFromCart = async (productId, size) => {
     try {
-      const response = await axios.delete("http://localhost:4000/cart/delete", {
+      const response = await axios.delete(`${process.env.REACT_APP_GREENATIK}/cart/delete`, {
         headers: {
           Authorization: `group__${token}`,
         },
@@ -105,7 +105,7 @@ const Cart = ({ exchangeRate }) => {
   const updateCartItemQuantity = async (productId, size, quantity) => {
     try {
       const response = await axios.put(
-        "http://localhost:4000/cart/update",
+        `${process.env.REACT_APP_GREENATIK}/cart/update`,
         {
           productId,
           size,
@@ -154,10 +154,10 @@ const Cart = ({ exchangeRate }) => {
                   <nav aria-label="breadcrumb">
                     <ol className="breadcrumb mb-0">
                       <li className="breadcrumb-item">
-                        <a href="/">Home</a>
+                        <Link to="/">Home</Link>
                       </li>
                       <li className="breadcrumb-item">
-                        <a href="/store">Shop</a>
+                        <Link to="/store">Shop</Link>
                       </li>
                       <li className="breadcrumb-item active" aria-current="page">
                         Shop Cart
@@ -210,9 +210,9 @@ const Cart = ({ exchangeRate }) => {
                       )}
                     </ul>
                     <div className="d-flex justify-content-between mt-7">
-                      <a href="/store" className="btn btn-primary">
+                      <Link to="/store" className="btn btn-primary">
                         Continue Shopping
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -246,13 +246,13 @@ const Cart = ({ exchangeRate }) => {
                           </ul>
                         </div>
                         <div className="d-grid mb-1 mt-4">
-                          <a
-                            href="/checkout"
+                          <Link
+                            to="/checkout"
                             className="btn btn-primary btn-lg d-flex justify-content-between align-items-center"
                             type="submit"
                           >
                             Go to Checkout
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>

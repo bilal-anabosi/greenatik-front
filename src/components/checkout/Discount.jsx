@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 const Discount = ({ onUpdate, totalPoints }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isDiscountApplied, setIsDiscountApplied] = useState(true);
@@ -52,8 +52,8 @@ const Discount = ({ onUpdate, totalPoints }) => {
 
   return (
     <div className="accordion-item py-4">
-      <a
-        href="#!"
+      <Link
+        to="#!"
         className={`text-inherit h5 ${isClicked ? 'text-success' : ''}`}
         data-bs-toggle="collapse"
         data-bs-target="#discountCollapse"
@@ -63,7 +63,7 @@ const Discount = ({ onUpdate, totalPoints }) => {
       >
         <i className="bi bi-cash" style={{ color: 'gray' }}></i>
         Discount
-      </a>
+      </Link>
       {isClicked && (
         <div
           id="discountCollapse"

@@ -35,7 +35,7 @@ const CreateProductForm = () => {
 
     try {
       const token = localStorage.getItem('userToken');
-      const response = await axios.post('http://localhost:4000/api/products', data, {
+      const response = await axios.post(`${process.env.REACT_APP_GREENATIK}/api/products`, data, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `group__${token}`

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Post from "./Post";
-
+import { Link } from 'react-router-dom';
 const Pagination = ({ posts }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 12;
@@ -48,9 +48,9 @@ const Pagination = ({ posts }) => {
       <nav aria-label="Page navigation example">
         <ul className="pagination mt-5">
           <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
-            <a
+            <Link
               className="page-link"
-              href="#"
+              to="#"
               onClick={(e) => {
                 e.preventDefault();
                 paginate(currentPage - 1);
@@ -58,23 +58,23 @@ const Pagination = ({ posts }) => {
               aria-label="Previous"
             >
               <span aria-hidden="true">&laquo;</span>
-            </a>
+            </Link>
           </li>
           {Array.from({ length: totalPages }, (_, i) => (
             <li
               key={i}
               className={`page-item ${currentPage === i + 1 ? "active" : ""}`}
             >
-              <a
+              <Link
                 className="page-link"
-                href="#"
+                to="#"
                 onClick={(e) => {
                   e.preventDefault();
                   paginate(i + 1);
                 }}
               >
                 {i + 1}
-              </a>
+              </Link>
             </li>
           ))}
           <li
@@ -82,9 +82,9 @@ const Pagination = ({ posts }) => {
               currentPage === totalPages ? "disabled" : ""
             }`}
           >
-            <a
+            <Link
               className="page-link"
-              href="#"
+              to="#"
               onClick={(e) => {
                 e.preventDefault();
                 paginate(currentPage + 1);
@@ -92,7 +92,7 @@ const Pagination = ({ posts }) => {
               aria-label="Next"
             >
               <span aria-hidden="true">&raquo;</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

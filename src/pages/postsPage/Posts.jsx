@@ -6,7 +6,7 @@ import PostModal from "../../components/post/PostModal.jsx";
 import Pagination from "../../components/post/Pagination.jsx";
 import Banner from "../../components/post/Banner.jsx";
 function generateRandomProgress() {
-  return Math.floor(Math.random() * 101); // Generates a random number between 0 and 100
+  return Math.floor(Math.random() * 101); // Generates Link random number between 0 and 100
 }
 const citiesAndFactories = [
   {
@@ -34,7 +34,7 @@ const Posts = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:4000/posts"); // Updated: Fetching data from the API
+        const response = await fetch(`${process.env.REACT_APP_GREENATIK}/posts`); // Updated: Fetching data from the API
         const data = await response.json();
         setOriginalData(data);
         setFilteredData(data); // Updated: Setting the fetched data to state
@@ -48,7 +48,7 @@ const Posts = () => {
   console.log("filteredData", filteredData);
   useEffect(() => {
     const almostCompletedData = [...originalData]
-      .sort((a, b) => b.percentage - a.percentage)
+      .sort((Link, b) => b.percentage - Link.percentage)
       .slice(0, 4);
     setAlmostCompletedData(almostCompletedData);
   }, [originalData]);
@@ -86,13 +86,13 @@ const Posts = () => {
 
     if (filter.sortType === "Latest") {
       filteredData = filteredData.sort(
-        (a, b) => parseDate(b?.date) - parseDate(a?.date)
+        (Link, b) => parseDate(b?.date) - parseDate(Link?.date)
       );
     }
 
     if (filter.sortType === "Earliest") {
       filteredData = filteredData.sort(
-        (a, b) => parseDate(a?.date) - parseDate(b?.date)
+        (Link, b) => parseDate(Link?.date) - parseDate(b?.date)
       );
     }
 
@@ -233,7 +233,7 @@ const Posts = () => {
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <a href="/home">Home</a>
+              <Link to="/home">Home</Link>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
               Recycling

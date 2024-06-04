@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/dashboard/sidebar';
-
+import { Link } from 'react-router-dom';
 const DeliveryOrders = ({exchangeRate}) => {
   const [originalCustomers, setOriginalCustomers] = useState([]); //get the data and store them in array for feltering
   const [customers, setCustomers] = useState([]);
@@ -19,7 +19,7 @@ const DeliveryOrders = ({exchangeRate}) => {
     const fetchCustomers = async () => {
       try {
         const token = localStorage.getItem('userToken');
-        const response = await axios.get(`http://localhost:4000/checkout/all`, {
+        const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/checkout/all`, {
           headers: {
             Authorization: `group__${token}`, 
           },
@@ -120,9 +120,9 @@ const DeliveryOrders = ({exchangeRate}) => {
                   {currentCustomers.map((customer, index) => (
                     <tr key={index}>
                       <td>
-                        <a href="#" className="text-inherit" onClick={() => handleCustomerClick(customer)}>
+                        <Link to="#" className="text-inherit" onClick={() => handleCustomerClick(customer)}>
                           {customer.user ? customer.user.name : 'N/A'}
-                        </a>
+                        </Link>
                       </td>
                       <td>{customer.user ? customer.user.email : 'N/A'}</td>
                       <td>{new Date(customer.checkoutDate).toLocaleDateString()}</td>

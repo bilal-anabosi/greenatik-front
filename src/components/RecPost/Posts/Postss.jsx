@@ -3,7 +3,7 @@ import './Postss.css';
 import FormII from '../Formss/FormII';
 import FormI from './FormI';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 const Postss = ({ postId }) => {
 
   const [isClicked, setIsClicked] = useState(false);
@@ -23,7 +23,7 @@ const Postss = ({ postId }) => {
           console.log(token);
 
           // Send the like request to the server with the token
-          const response = await axios.post(`http://localhost:4000/singlepost/${postId}/likes`, null, {
+          const response = await axios.post(`${process.env.REACT_APP_GREENATIK}/singlepost/${postId}/likes`, null, {
               headers: {
                   'Authorization': `group__${token}`
               }
@@ -52,7 +52,7 @@ const Postss = ({ postId }) => {
   useEffect(() => {
     const fetchPostData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/singlepost/${postId}`);
+        const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/singlepost/${postId}`);
         setPost(response.data); // Assuming your backend sends back the whole post object
       } catch (error) {
         console.error('Error fetching post data:', error);
@@ -187,11 +187,11 @@ const Postss = ({ postId }) => {
           <br />
           <br />
           <h1 className="h4 card-title mb-0"> </h1>
-          <a href='/all-posts'> 
+          <Link to='/all-posts'> 
             <svg xmlns="http://www.w3.org/2000/svg" width={50} height={50} fill="#4EA933" className="bi bi-arrow-left-square-fill" viewBox="0 0 16 16" transform="translate(60,-50)">
             <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1" />
             </svg>   
-          </a>
+          </Link>
           <br />
         </div>
       </div>

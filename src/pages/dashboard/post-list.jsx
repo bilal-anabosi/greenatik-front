@@ -10,7 +10,7 @@ export default function PostsList() {
     let token = localStorage.getItem('userToken');
 
     useEffect(() => {
-        axios.get("http://localhost:4000/posts/admin", {
+        axios.get(`${process.env.REACT_APP_GREENATIK}/posts/admin`, {
             headers: {
                 'Authorization': `group__${token}`,
             }
@@ -69,7 +69,7 @@ export default function PostsList() {
                                                 <Fragment>
                                                     <tr scope="item_row">
                                                         <td>{item.title}</td>
-                                                        <td><a href="#">{item.requesting}</a></td>
+                                                        <td><Link to="#">{item.requesting}</Link></td>
                                                         <td>{item.quantity}</td>
                                                         <td>
                                                             <div className="item_status">

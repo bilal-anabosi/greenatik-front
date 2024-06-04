@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 const DeliveryInstructionsAccordion = ({ onUpdate }) => {
   const [deliveryInstructions, setDeliveryInstructions] = useState('');
   const [isClicked, setIsClicked] = useState(false); // تعيين قيمة افتراضية للحالة هنا
@@ -21,8 +21,8 @@ const DeliveryInstructionsAccordion = ({ onUpdate }) => {
 
   return (
     <div className="accordion-item py-4">
-      <a
-        href="#!"
+      <Link
+        to="#!"
         className={`text-inherit h5 ${isClicked ? 'text-success' : ''}`}
         data-bs-toggle="collapse"
         data-bs-target="#flush-collapseThree"
@@ -32,7 +32,7 @@ const DeliveryInstructionsAccordion = ({ onUpdate }) => {
       >
         <i className="bi bi-clock" style={{ color: 'gray' }}></i>
         Delivery instructions
-      </a>
+      </Link>
       <div
         id="flush-collapseThree"
         className={`accordion-collapse collapse ${isClicked ? 'show' : ''}`}
@@ -53,8 +53,8 @@ const DeliveryInstructionsAccordion = ({ onUpdate }) => {
           ></textarea>
           <p className="form-text">Add instructions for how you want your order shopped and/or delivered</p>
           <div className="mt-5 d-flex justify-content-end">
-            <a
-              href="#!"
+            <Link
+              to="#!"
               className="btn btn-primary ms-2"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseFour"
@@ -62,7 +62,7 @@ const DeliveryInstructionsAccordion = ({ onUpdate }) => {
               aria-controls="flush-collapseFour"
             >
               Next
-            </a>
+            </Link>
           </div>
         </div>
       </div>

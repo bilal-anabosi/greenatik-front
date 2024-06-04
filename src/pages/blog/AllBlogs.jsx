@@ -12,7 +12,7 @@ function AllBlogs() {
     // Fetch blogs from the API
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('http://localhost:4000/blogs/blogs'); // Adjust the URL as per your backend setup
+        const response = await fetch(`${process.env.REACT_APP_GREENATIK}/blogs/blogs`); // Adjust the URL as per your backend setup
         const data = await response.json();
         setBlogs(data);
       } catch (error) {
@@ -33,7 +33,7 @@ function AllBlogs() {
                 {/* breadcrumb */}
                 <nav aria-label="breadcrumb">
                   <ol className="breadcrumb mb-0">
-                    <li className="breadcrumb-item"><a href="/home">Home</a></li>
+                    <li className="breadcrumb-item"><Link to="/home">Home</Link></li>
                     <li className="breadcrumb-item active" aria-current="page">Blog</li>
                   </ol>
                 </nav>
@@ -53,7 +53,7 @@ function AllBlogs() {
           </div>
         </section>
 
-         {/* this is a static blog because of its importance to be always here the rest are not static */}
+         {/* this is Link static blog because of its importance to be always here the rest are not static */}
         
         {/* section */}
         <section className="mt-6 mb-lg-14 mb-8">
@@ -61,19 +61,19 @@ function AllBlogs() {
           <div className="container">
             <div className="row d-flex align-items-center mb-8">
               <div className="col-12 col-md-12 col-lg-8">
-                <a href="/openingblog">
+                <Link to="/openingblog">
                   {/* img */}
                   <div className="img-zoom">
                     <img src="https://i.imgur.com/X3yjmRP.png" alt="ALT" className="img-fluid w-100" />
                   </div>
-                </a>
+                </Link>
               </div>
               {/* text */}
               <div className="col-12 col-md-12 col-lg-4">
                 <div className="ps-lg-8 mt-8 mt-lg-0">
-                  <h2 className="mb-3"><a href="/openingblog" className="text-inherit">Will sustainable living make you happier?</a></h2>
+                  <h2 className="mb-3"><Link to="/openingblog" className="text-inherit">Will sustainable living make you happier?</Link></h2>
                   <p>
-                    clean air, fresh water, green trees…I think everyone can agree that a clean, sustainable environment is better for everyone.
+                    clean air, fresh water, green trees…I think everyone can agree that Link clean, sustainable environment is better for everyone.
                   </p>
                   <div className="d-flex justify-content-between text-muted">
                     <span><small>22 April 2023</small></span>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <div className="container mt-5 ">
@@ -10,14 +10,14 @@ const Header = () => {
               <h2>Add New Product</h2>
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb mb-0">
-                  <li className="breadcrumb-item"><a href="/" className="text-inherit">Dashboard</a></li>
-                  <li className="breadcrumb-item"><a href="products" className="text-inherit">Products</a></li>
+                  <li className="breadcrumb-item"><Link to="/" className="text-inherit">Dashboard</Link></li>
+                  <li className="breadcrumb-item"><Link to="products" className="text-inherit">Products</Link></li>
                   <li className="breadcrumb-item active" aria-current="page">Add New Product</li>
                 </ol>
               </nav>
             </div>
             <div>
-              <a href="products" className="btn btn-light">Back to Product</a>
+              <Link to="products" className="btn btn-light">Back to Product</Link>
             </div>
           </div>
         </div>

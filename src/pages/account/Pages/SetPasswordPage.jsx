@@ -30,17 +30,17 @@ export default function SetPasswordPage() {
                 </Link>
 
                 <Typography variant="h3" component="h1" >
-                    Set a password
+                    Set Link password
                 </Typography>
                 
                 <Typography variant="body1" gutterBottom style={{color:'#5F6C74', fontSize:'16px'}}>
-                    your previous password has been reset. Please enter a new password.
+                    your previous password has been reset. Please enter Link new password.
                 </Typography>
 
                 <SetPasswordForm/>
             </Stack>
             </div>
-            <img  src='./img/man sitting and showing a heart with his arms.png' className='col-md-6 mt-5 ps-5'/>
+            <img  src='./img/man sitting and showing Link heart with his arms.png' className='col-md-6 mt-5 ps-5'/>
             </div>
         </Container>
     )

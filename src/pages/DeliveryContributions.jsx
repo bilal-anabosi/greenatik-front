@@ -18,7 +18,7 @@ const DeliveryContributions = () => {
     const fetchContributions = async () => {
       try {
         const token = localStorage.getItem('userToken');
-        const response = await axios.get(`http://localhost:4000/delivery/contributions`, {
+        const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/delivery/contributions`, {
           headers: {
             Authorization: `group__${token}`, 
           },

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { Link } from 'react-router-dom';
 const Product = ({
   imgSrc,
   title,
@@ -43,7 +43,7 @@ const Product = ({
           <img
             src={
               imgSrc
-                ? `http://localhost:4000/${imgSrc}`
+                ? `${process.env.REACT_APP_GREENATIK}/${imgSrc}`
                 : "fallback_image_url.jpg"
             }
             alt="Ecommerce"
@@ -51,13 +51,13 @@ const Product = ({
           />
         </div>
         <div className="col-4 col-md-5">
-          <a href="#!" className="text-inherit">
+          <Link to="#!" className="text-inherit">
             <h6 className="mb-0">{title}</h6>
-          </a>
+          </Link>
           <small>Size: {size}</small>
           <div className="mt-2 small lh-1">
-            <a
-              href="#!"
+            <Link
+              to="#!"
               className="text-decoration-none text-inherit"
               onClick={handleRemoveClick}
             >
@@ -81,7 +81,7 @@ const Product = ({
                 </svg>
               </span>
               <span className="text-muted">Remove</span>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-3 col-md-3 col-lg-2 d-flex">

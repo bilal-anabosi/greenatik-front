@@ -86,7 +86,7 @@ function Profile({ exchangeRate }) {
                     formData.append("address", values.address);
 
                     axios
-                      .put("http://localhost:4000/profile", formData, {
+                      .put(`${process.env.REACT_APP_GREENATIK}/profil`, formData, {
                         headers: { Authorization: `group__${userToken}` },
                       })
                       .then((response) => {
@@ -108,7 +108,7 @@ function Profile({ exchangeRate }) {
                             style={{ width: "150px", height: "150px" }}
                             alt="avatar"
                           />
-                          <h6>Upload a photo...</h6>
+                          <h6>Upload Link photo...</h6>
                           <input
                             name="img"
                             type="file"

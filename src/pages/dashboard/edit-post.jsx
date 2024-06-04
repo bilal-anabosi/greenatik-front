@@ -27,7 +27,7 @@ export default function EditPost() {
     })
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/posts/${id}`, {
+        axios.get(`${process.env.REACT_APP_GREENATIK}/posts/${id}`, {
             headers: {
                 Authorization: `group__${token}`
             }
@@ -48,7 +48,7 @@ export default function EditPost() {
             return toast.error("All fields are required")
         }
 
-        axios.put(`http://localhost:4000/posts/${id}`, data, {
+        axios.put(`${process.env.REACT_APP_GREENATIK}/posts/${id}`, data, {
             headers: {
                 Authorization: `group__${token}`
             }

@@ -19,7 +19,7 @@ const SignUpForm = () => {
 
   const onSubmit = async (userData) => {
     try {
-      const { data, status } = await axios.post(`http://localhost:4000/user/signup`, userData);
+      const { data, status } = await axios.post(`${process.env.REACT_APP_GREENATIK}/user/signup`, userData);
       
       if (status === 201) {
         console.log(data.user);

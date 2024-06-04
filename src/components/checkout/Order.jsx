@@ -27,7 +27,7 @@ const Order = ({ items, discountAmount, exchangeRate }) => {
               <div className="row align-items-center">
                 <div className="col-2 col-md-2">
                   <img 
-                    src={`http://localhost:4000/${item.images}`}
+                    src={`${process.env.REACT_APP_GREENATIK}/${item.images}`}
                     className="img-fluid"
                     alt=""
                   />

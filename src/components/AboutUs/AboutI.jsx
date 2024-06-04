@@ -14,7 +14,7 @@ return (
         </div>
       </div>
       <div className="col-md-6 align-self-center text-center text-sm-center text-md-start">
-        <p className="pe-0 pe-lg-5">At GreeNatik, we are passionate about creating a sustainable future through innovative recycling solutions and promoting green practices.</p>
+        <p className="pe-0 pe-lg-5">At GreeNatik, we are passionate about creating Link sustainable future through innovative recycling solutions and promoting green practices.</p>
         <p className="pe-0 pe-lg-5">Our mission is to inspire and empower communities, businesses, and individuals to take an active role in preserving our planet for generations to come.</p> 
         <img src="/img/crayon-425.png" alt="..." className='im' />
       </div>

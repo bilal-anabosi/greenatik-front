@@ -7,7 +7,7 @@ function ProductList() {
     useEffect(() => {
         async function fetchProducts() {
             try {
-                const { data } = await axios.get('http://localhost:4000/api/products');
+                const { data } = await axios.get(`${process.env.REACT_APP_GREENATIK}/api/products`);
                 setProducts(data);
             } catch (error) {
                 console.error('Error fetching products:', error);

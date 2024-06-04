@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ProductList from '../components/wide/ProductList';
-
+import { Link } from 'react-router-dom';
 
 
 const Wide = ({exchangeRate}) => {
@@ -16,8 +16,8 @@ const Wide = ({exchangeRate}) => {
         {/* breadcrumb */}
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb mb-0">
-            <li className="breadcrumb-item"><a href="/home">Home</a></li>
-            <li className="breadcrumb-item"><a href="/store">Shop</a></li>
+            <li className="breadcrumb-item"><Link to="/home">Home</Link></li>
+            <li className="breadcrumb-item"><Link to="/store">Shop</Link></li>
             <li className="breadcrumb-item active" aria-current="page">Wide</li>
           </ol>
         </nav>

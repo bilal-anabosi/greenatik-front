@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 const OrderList = ({ exchangeRate })=> {
     const [orders, setOrders] = useState([]);
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ const OrderList = ({ exchangeRate })=> {
     const fetchOrders = useCallback(async () => {
         const token = localStorage.getItem('userToken');
         try {
-            const response = await fetch('http://localhost:4000/checkout/details', {
+            const response = await fetch(`${process.env.REACT_APP_GREENATIK}/checkout/details`, {
                 headers: {
                     'Authorization': `group__${token}`
                 }
@@ -72,14 +72,14 @@ const OrderList = ({ exchangeRate })=> {
                                                 {order.items.map((item, itemIndex) => (
                                                     <tr key={itemIndex}>
                                                         <td className="align-middle border-top-0 w-0">
-                                                            <a href="# ">
-                                                                <img src={`http://localhost:4000/${item.image}`} alt="Ecommerce" className="icon-shape icon-xl" />
-                                                            </a>
+                                                            <Link to="# ">
+                                                                <img src={`${process.env.REACT_APP_GREENATIK}/${item.image}`} alt="Ecommerce" className="icon-shape icon-xl" />
+                                                            </Link>
                                                         </td>
                                                         <td className="align-middle border-top-0">
-                                                            <a href="# " className="fw-semibold text-inherit">
+                                                            <Link to="# " className="fw-semibold text-inherit">
                                                                 <h6 className="mb-0">{item.name}</h6>
-                                                            </a>
+                                                            </Link>
                                                             <span><small className="text-muted">{item.description}</small></span>
                                                         </td>
                                                         <td className="align-middle border-top-0">{new Date(order.checkoutDate).toLocaleDateString()}</td>

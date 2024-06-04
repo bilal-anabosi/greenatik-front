@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./PostModal.module.css";
-
+import { Link } from 'react-router-dom';
 const PostModal = () => {
   const [additionalStyles, setAdditionalStyles] = useState({});
 
@@ -34,7 +34,7 @@ const PostModal = () => {
             <p className={classes.emailText}>
               Join our recycling community to create posts requesting materials
               and contribute to environmental conservation.{" "}
-              <a href="/sign-up">Sign up here</a> to make a difference!
+              <Link to="/sign-up">Sign up here</Link> to make Link difference!
             </p>
           </div>
         </div>

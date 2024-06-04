@@ -24,7 +24,7 @@ const ProductList = ({exchangeRate}) => {
     useEffect(() => {
         const fetchAllProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/wide/wide-products');
+                const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/wide/wide-products`);
                 setAllProducts(response.data.LasstProductsWithSale);
             } catch (error) {
                 console.error('Error fetching products:', error);
@@ -64,16 +64,16 @@ const ProductList = ({exchangeRate}) => {
 
         switch (sortBy) {
             case "Low to High":
-                filteredProducts.sort((a, b) => a.sizes[0].regularPrice - b.sizes[0].regularPrice);
+                filteredProducts.sort((Link, b) => Link.sizes[0].regularPrice - b.sizes[0].regularPrice);
                 break;
             case "High to Low":
-                filteredProducts.sort((a, b) => b.sizes[0].regularPrice - a.sizes[0].regularPrice);
+                filteredProducts.sort((Link, b) => b.sizes[0].regularPrice - Link.sizes[0].regularPrice);
                 break;
             case "Release Date":
-                filteredProducts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+                filteredProducts.sort((Link, b) => new Date(b.createdAt) - new Date(Link.createdAt));
                 break;
             case "Avg. Rating":
-                filteredProducts.sort((a, b) => b.reviews - a.reviews);
+                filteredProducts.sort((Link, b) => b.reviews - Link.reviews);
                 break;
             default:
                 break;

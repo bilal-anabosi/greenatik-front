@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { NavLink,Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
+import { Link } from 'react-router-dom';
 
 function Navbar({ onRateChange }) {
   const { t, i18n } = useTranslation();
@@ -18,7 +18,7 @@ function Navbar({ onRateChange }) {
   const handleCurrencyChange = async (selectedCurrency) => {
     setCurrency(selectedCurrency);
     try {
-      const response = await axios.get('http://localhost:4000/api/exchange-rates');
+      const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/api/exchange-rates`);
       const rate = selectedCurrency === 'USD' ? 1 : response.data.rates.ILS;
       const roundedRate = Math.round(rate * 10) / 10; 
       console.log('Selected Rate:', roundedRate);
@@ -38,7 +38,7 @@ function Navbar({ onRateChange }) {
       try {
         const token = localStorage.getItem('userToken');
         if (token) {
-          const response = await axios.get('http://localhost:4000/profile', {
+          const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/profile`, {
             headers: {
               Authorization: `group__${token}`,
             },
@@ -211,7 +211,7 @@ function Navbar({ onRateChange }) {
                 </ul>
             </li>
             <li className="nav-item">
-            <Link className="nav-link" to="/all-posts">{t('navbar.recycling')}</Link>
+                <Link className="nav-link" to="/all-posts">{t('navbar.recycling')}</Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link" to="/blog">{t('navbar.blogs')}</Link>

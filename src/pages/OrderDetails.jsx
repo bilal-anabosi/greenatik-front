@@ -13,7 +13,7 @@ const OrderDetails = ( {exchangeRate}) => {
     const fetchCustomerData = async () => {
       try {
         const token = localStorage.getItem('userToken');
-        const response = await axios.get(`http://localhost:4000/checkout/checkout/${numOrder}`, {
+        const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/checkout/checkout/${numOrder}`, {
           headers: {
             Authorization: `group__${token}`,
           },
@@ -35,7 +35,7 @@ const OrderDetails = ( {exchangeRate}) => {
   const handleStatusChange = async (orderNumber) => {
     try {
       const token = localStorage.getItem('userToken');
-      const response = await axios.put(`http://localhost:4000/checkout/${orderNumber}/delivered`, {
+      const response = await axios.put(`${process.env.REACT_APP_GREENATIK}/checkout/${orderNumber}/delivered`, {
         status: 'delivered',
       }, {
         headers: {
@@ -58,7 +58,7 @@ const OrderDetails = ( {exchangeRate}) => {
   //get pics
   const renderItemImage = (item) => {
     if (item.image) {
-      return <img src={`http://localhost:4000/${item.image}`} alt={item.name} className="card-img-top" />;
+      return <img src={`${process.env.REACT_APP_GREENATIK}/${item.image}`} alt={item.name} className="card-img-top" />;
     } else {
       return <div className="card-img-top">No image available</div>;
     }

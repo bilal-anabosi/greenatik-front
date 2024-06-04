@@ -132,7 +132,7 @@ font-weight: bold;
     font-weight: bold;
     margin-left: 200px;
 }
-.t-text a {
+.t-text Link {
     color: #333333CC;; 
     text-decoration: underline; 
 }

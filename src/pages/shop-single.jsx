@@ -28,21 +28,22 @@ export default function ShopSingle({ exchangeRate }) {
     }, [id]);
 
     function handlePostLoad() {
-        axios.get(`http://localhost:4000/api/products/${id}`).then(({ data }) => {
+        axios.get(`${process.env.REACT_APP_GREENATIK}/api/products/${id}`).then(({ data }) => {
+            console.log(data)
             setProduct(data.product);
 
-            axios.get(`http://localhost:4000/Store/by-category?category=${data.product?.category}`).then(({ data }) => {
+            axios.get(`${process.env.REACT_APP_GREENATIK}/Store/by-category?category=${data.product?.category}`).then(({ data }) => {
                 setRelated(data.products);
             }).catch(err => { });
         }).catch(err => { });
 
-        axios.get(`http://localhost:4000/reviews/${id}`).then(({ data }) => {
+        axios.get(`${process.env.REACT_APP_GREENATIK}/reviews/${id}`).then(({ data }) => {
             setReviews(data);
         }).catch(err => { });
     }
 
     function addToCart() {
-        axios.post('http://localhost:4000/cart/add', {
+        axios.post(`${process.env.REACT_APP_GREENATIK}/cart/add`, {
             productId: product._id,
             quantity: amount,
             size: product.sizes[selectedSize].size
@@ -58,7 +59,7 @@ export default function ShopSingle({ exchangeRate }) {
     }
 
     function addToWishList() {
-        axios.post('http://localhost:4000/wishlist/', {
+        axios.post(`${process.env.REACT_APP_GREENATIK}/wishlist/`, {
             productId: product._id,
             size: product.sizes[selectedSize].size
         }, {
@@ -73,7 +74,7 @@ export default function ShopSingle({ exchangeRate }) {
     }
 
     function addComment() {
-        axios.post(`http://localhost:4000/reviews/${id}`, {
+        axios.post(`${process.env.REACT_APP_GREENATIK}/reviews/${id}`, {
             rating: newReview.rating,
             comment: newReview.comment,
             product: id,
@@ -108,12 +109,12 @@ export default function ShopSingle({ exchangeRate }) {
         <div className='single_container'>
             <div className="info">
                 <div className="left">
-                    <img src={`http://localhost:4000/${product.images[selectedImage]}`} />
+                    <img src={`${process.env.REACT_APP_GREENATIK}/${product.images[selectedImage]}`} />
                     <div className="images">
                         {product.images.map((image, index) =>
                             <img
                                 key={index}
-                                src={`http://localhost:4000/${image}`}
+                                src={`${process.env.REACT_APP_GREENATIK}/${image}`}
                                 onClick={() => setSelectedImage(index)}
                                 className={selectedImage === index ? 'selected' : ''}
                             />
@@ -122,7 +123,7 @@ export default function ShopSingle({ exchangeRate }) {
                 </div>
                 <div className="right">
                     <div className="right_title">
-                        <a>{product.category}</a>
+                        <Link>{product.category}</Link>
                         <h1>{product.title}</h1>
                         <div className='price-tag'>
                             {
@@ -204,7 +205,7 @@ export default function ShopSingle({ exchangeRate }) {
                         :
                         <>
                             <div className="add_review">
-                                <h3>Add a Review</h3>
+                                <h3>Add Link Review</h3>
                                 <div className="review_input">
                                     <textarea
                                         placeholder="Write your review here"
@@ -275,7 +276,7 @@ function Item({ _id, images, title, sizes, exchangeRate, currencySymbol }) {
     return (
         <Link to={`/shop-single/${_id}`}>
             <div className='related_item'>
-                <img src={`http://localhost:4000/${images[0]}`} />
+                <img src={`${process.env.REACT_APP_GREENATIK}/${images[0]}`} />
                 <span>{title}</span>
                 <div className='related_row'>
                     <div className='price-tag-small'>

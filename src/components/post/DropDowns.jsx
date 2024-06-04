@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 const DropdownMenu = ({ title, choices, onChange }) => (
   <div className="dropdown" style={{ margin: "0px", width: "100%" }}>
     <button
@@ -14,9 +14,9 @@ const DropdownMenu = ({ title, choices, onChange }) => (
     <ul className="dropdown-menu w-100" onClick={onChange}>
       {choices.map((choice, index) => (
         <li key={index}>
-          <a className="dropdown-item " href="#" data-value={choice.value}>
+          <Link className="dropdown-item " to="#" data-value={choice.value}>
             {choice.label}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>

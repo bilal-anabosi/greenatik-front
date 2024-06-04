@@ -23,7 +23,7 @@ const ProductsPage = ({exchangeRate}) => {
       try {
         const authToken = localStorage.getItem('userToken');
         if (authToken) {
-          const response = await axios.get('http://localhost:4000/api/products', {
+          const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/api/products`, {
             headers: {
               Authorization: `group__${authToken}`
             }

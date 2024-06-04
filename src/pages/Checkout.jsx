@@ -23,7 +23,7 @@ function Checkout({ exchangeRate }) {
       }
 
       try {
-        const response = await axios.get('http://localhost:4000/cart', {
+        const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/cart`, {
           headers: {
             'Authorization': `group__${token}`
           }
@@ -41,7 +41,7 @@ function Checkout({ exchangeRate }) {
       }
 
       try {
-        const response = await axios.get('http://localhost:4000/checkout/points', {
+        const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/checkout/points`, {
           headers: {
             'Authorization': `group__${token}`
           }
@@ -98,7 +98,7 @@ function Checkout({ exchangeRate }) {
     };
 
     try {
-      const response = await axios.post('http://localhost:4000/checkout', checkoutPayload, {
+      const response = await axios.post(`${process.env.REACT_APP_GREENATIK}/checkout`, checkoutPayload, {
         headers: {
           'Authorization': `group__${token}`
         }

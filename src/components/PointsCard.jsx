@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+
 const PointsCard = () => {
   const [points, setPoints] = useState({ total: 0, availablePoints: 0, tasks: 0, log: [] });
   const [error, setError] = useState('');
@@ -14,7 +15,7 @@ const PointsCard = () => {
       }
 
       try {
-        const response = await axios.get('http://localhost:4000/profile/points', {
+        const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/profile/points`, {
           headers: { Authorization: `group__${token}` },
         });
         setPoints(response.data);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './home.css';
 import { useTranslation } from 'react-i18next';
-
+import { Link } from 'react-router-dom';
 function Home() {
   const { t, i18n } = useTranslation();
   const [selectedItem, setSelectedItem] = useState('item1');
@@ -16,9 +16,9 @@ function Home() {
               {t('home.careAboutPlanet')}<br /><br />
               {t('home.shopGuiltFree')}<br /><br />
             </p>
-            <a href='/store'>
+            <Link to='/store'>
               <button className='btn btn-primary'>{t('home.viewStore')}</button>
-            </a>
+            </Link>
           </div>
         );
       case 'item2':
@@ -36,9 +36,9 @@ function Home() {
               <li>{t('home.recycleEase')}</li>
             </ul>
             <br />
-            <a href='/sign-up'>
+            <Link to='/sign-up'>
               <button className='btn btn-primary'>{t('home.signUp')}</button>
-            </a>
+            </Link>
           </div>
         );
       case 'item3':
@@ -58,9 +58,9 @@ function Home() {
               </ul>
               <br />
             </p>
-            <a href='/all-posts'>
+            <Link to='/all-posts'>
               <button className='btn btn-primary'>{t('home.allPosts')}</button>
-            </a>
+            </Link>
           </div>
         );
       case 'item4':
@@ -77,9 +77,9 @@ function Home() {
               </ul>
               <br />
             </p>
-            <a href='/blog'>
+            <Link to='/blog'>
               <button className='btn btn-primary'>{t('home.goToBlogs')}</button>
-            </a>
+            </Link>
           </div>
         );
       default:
@@ -240,7 +240,7 @@ function Home() {
           <span className="badge fs-sm bg-primary bg-opacity-10 mb-3 mb-lg-4"> {t('home.howRecyclingWorks.steps.0.badge')}</span>
           <h3 className="h2 mb-3 mb-lg-4"> {t('home.howRecyclingWorks.steps.0.title')}</h3>
           <p className="pb-1 pb-lg-0 mb-4 mb-lg-5">  {t('home.howRecyclingWorks.steps.0.description')}</p>
-          <a className="btn btn-outline-primary rounded-pill" href="/all-posts"> {t('home.howRecyclingWorks.steps.0.button')}</a>
+          <Link className="btn btn-outline-primary rounded-pill" to="/all-posts"> {t('home.howRecyclingWorks.steps.0.button')}</Link>
         </div>
       </div>
     </div>
@@ -308,7 +308,7 @@ function Home() {
           <span className="badge fs-sm bg-primary bg-opacity-10  mb-3 mb-lg-4">{t('home.howRecyclingWorks.steps.2.badge')}</span>
           <h3 className="h2 mb-3 mb-lg-4">{t('home.howRecyclingWorks.steps.2.title')}</h3>
           <p className="pb-1 pb-lg-0 mb-4 mb-lg-5">{t('home.howRecyclingWorks.steps.2.description')}</p>
-          <a className="btn btn-outline-primary rounded-pill" href="/leaderboard">{t('home.howRecyclingWorks.steps.2.button')}</a>
+          <Link className="btn btn-outline-primary rounded-pill" to="/leaderboard">{t('home.howRecyclingWorks.steps.2.button')}</Link>
         </div>
       </div>
     </div>

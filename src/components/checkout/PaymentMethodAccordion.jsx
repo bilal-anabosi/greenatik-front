@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-
+import { Link } from 'react-router-dom';
 function PaymentMethodAccordion({ onUpdate }) {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("Cash on Delivery");
   const [expiryDate, setExpiryDate] = useState(null);
@@ -41,8 +41,8 @@ function PaymentMethodAccordion({ onUpdate }) {
 
   return (
     <div className="accordion-item py-4">
-      <a
-        href="#!"
+      <Link
+        to="#!"
         className="text-inherit h5"
         data-bs-toggle="collapse"
         data-bs-target="#flush-collapseFour"
@@ -51,7 +51,7 @@ function PaymentMethodAccordion({ onUpdate }) {
       >
         <i className="bi bi-credit-card-2-front" style={{ color: "gray" }}></i>
         Payment Method
-      </a>
+      </Link>
       <div
         id="flush-collapseFour"
         className="accordion-collapse collapse "
@@ -292,14 +292,14 @@ function PaymentMethodAccordion({ onUpdate }) {
 
                   {!isPaymentMethodSelected && (
                     <div className="text-danger">
-                      Please select a payment method
+                      Please select Link payment method
                     </div>
                   )}
                 </div>
 
                 <div className="mt-5 d-flex justify-content-end">
-                  <a
-                    href="#!"
+                  <Link
+                    to="#!"
                     className="btn btn-outline-gray-400 text-muted collapsed"
                     data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseThree"
@@ -307,7 +307,7 @@ function PaymentMethodAccordion({ onUpdate }) {
                     aria-controls="flush-collapseThree"
                   >
                     Prev
-                  </a>
+                  </Link>
                 </div>
               </Form>
             )}

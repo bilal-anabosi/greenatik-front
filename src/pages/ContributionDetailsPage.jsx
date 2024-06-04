@@ -11,7 +11,7 @@ const ContributionDetailsPage = () => {
   const fetchContributionDetails = async () => {
     try {
       const token = localStorage.getItem('userToken');
-      const response = await axios.get(`http://localhost:4000/delivery/post/${id}`, {
+      const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/delivery/post/${id}`, {
         headers: {
           Authorization: `group__${token}`, 
         },
@@ -41,7 +41,7 @@ const ContributionDetailsPage = () => {
     try {
       const token = localStorage.getItem('userToken');
       const response = await axios.put(
-        `http://localhost:4000/delivery/status/${id}`,
+        `${process.env.REACT_APP_GREENATIK}/delivery/status/${id}`,
         { status: newStatus },
         {
           headers: {

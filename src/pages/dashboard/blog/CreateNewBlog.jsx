@@ -33,7 +33,7 @@ const CreateNewBlog = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:4000/blogs/create-new-blog', data, {
+            const response = await axios.post(`${process.env.REACT_APP_GREENATIK}/blogs/create-new-blog`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `group__${token}`,
@@ -66,8 +66,8 @@ const CreateNewBlog = () => {
                         <div className="col-12 mt-4">
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb mb-0">
-                                    <li className="breadcrumb-item"><a href="#!">Dashboard</a></li>
-                                    <li className="breadcrumb-item"><a href="#!">Blog</a></li>
+                                    <li className="breadcrumb-item"><Link to="#!">Dashboard</Link></li>
+                                    <li className="breadcrumb-item"><Link to="#!">Blog</Link></li>
                                     <li className="breadcrumb-item active" aria-current="page">Create New Blog</li>
                                 </ol>
                             </nav>
@@ -86,7 +86,7 @@ const CreateNewBlog = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <a href="/dashboard/all-blogs" className="btn btn-light">Back to Blog</a>
+                                        <Link to="/dashboard/all-blogs" className="btn btn-light">Back to Blog</Link>
                                     </div>
                                 </div>
                             </div>

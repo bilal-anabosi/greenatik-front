@@ -17,7 +17,7 @@ function AccessDenied(){
         </Link> 
         </p>   
         </div>
-    <img src={'./img/woman and man discussing work at a bar table.png'} alt="screenshot" style={{ position: 'relative', zIndex: '0', maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto' }} />
+    <img src={'./img/woman and man discussing work at Link bar table.png'} alt="screenshot" style={{ position: 'relative', zIndex: '0', maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto' }} />
 </div>
 
 

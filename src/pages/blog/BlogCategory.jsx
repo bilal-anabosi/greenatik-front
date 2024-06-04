@@ -13,7 +13,7 @@ function BlogCategory() {
     // Fetch blogs by category from the API
     const fetchBlogs = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/blogs/category/${category}`);
+        const response = await fetch(`${process.env.REACT_APP_GREENATIK}/blogs/category/${category}`);
         const data = await response.json();
         setBlogs(data);
       } catch (error) {
@@ -37,8 +37,8 @@ function BlogCategory() {
               {/* breadcrumb */}
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb mb-0">
-                  <li className="breadcrumb-item"><a href="/home">Home</a></li>
-                  <li className="breadcrumb-item"><a href="/blogs">Blog</a></li>
+                  <li className="breadcrumb-item"><Link to="/home">Home</Link></li>
+                  <li className="breadcrumb-item"><Link to="/blogs">Blog</Link></li>
                   <li className="breadcrumb-item active" aria-current="page">{category}</li>
                 </ol>
               </nav>

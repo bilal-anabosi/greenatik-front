@@ -11,7 +11,7 @@ const LeaderBoard = () => {
     useEffect(() => {
       const fetchTopUsers = async () => {
         try {
-          const response = await fetch('http://localhost:4000/leaderboard/top-users');
+          const response = await fetch(`${process.env.REACT_APP_GREENATIK}/leaderboard/top-users`);
           const result = await response.json();
           setData(result);
         } catch (error) {

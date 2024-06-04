@@ -1,5 +1,6 @@
 import React from "react";
 import Product from "./Product";
+import { Link } from 'react-router-dom';
 const products = [
   {
     imgSrc: "./pics/cartPage/cat.png",
@@ -72,9 +73,9 @@ const SideBarCart = () => {
           ))}
         </ul>
         <div className="d-flex justify-content-between mt-4">
-          <a href="#!" className="btn btn-primary">
+          <Link to="#!" className="btn btn-primary">
             Checkout
-          </a>
+          </Link>
         </div>
       </div>
     </div>

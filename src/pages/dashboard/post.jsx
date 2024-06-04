@@ -34,7 +34,7 @@ export default function CreatePost() {
             return toast.error("All fields are required")
         }
 
-        axios.post('http://localhost:4000/posts', data, {
+        axios.post(`${process.env.REACT_APP_GREENATIK}/posts`, data, {
             headers: {
                 Authorization: `group__${token}`,
             }

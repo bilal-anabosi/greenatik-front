@@ -12,7 +12,7 @@ export default function UserContextProvider({ children }) {
     if (localUserToken) {
       const headers = { Authorization: `group__${localUserToken}` }
       
-      const { data } = await axios.get(`http://localhost:4000/profile`, { headers: headers })
+      const { data } = await axios.get(`${process.env.REACT_APP_GREENATIK}/profile`, { headers: headers })
     
       setUserToken(localUserToken)
       setUserData(data.user);

@@ -6,12 +6,12 @@ function SingleBlog() {
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
-    document.title = "This is a blog";
+    document.title = "This is Link blog";
 
     // Fetch blog data by ID
     const fetchBlog = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/blogs/blogs/${id}`);
+        const response = await fetch(`${process.env.REACT_APP_GREENATIK}/blogs/blogs/${id}`);
         const data = await response.json();
         setBlog(data);
       } catch (error) {
@@ -35,8 +35,8 @@ function SingleBlog() {
                 {/* breadcrumb */}
                 <nav aria-label="breadcrumb">
                   <ol className="breadcrumb mb-0">
-                    <li className="breadcrumb-item"><a href="/home">Home</a></li>
-                    <li className="breadcrumb-item"><a href="/blog">Blog</a></li>
+                    <li className="breadcrumb-item"><Link to="/home">Home</Link></li>
+                    <li className="breadcrumb-item"><Link to="/blog">Blog</Link></li>
                     <li className="breadcrumb-item active" aria-current="page">{blog.title}</li>
                   </ol>
                 </nav>
@@ -51,7 +51,7 @@ function SingleBlog() {
               <div className="col-md-8 offset-md-2">
                 {/* text */}
                 <div className="mb-5">
-                  <div className="mb-3 text-center"><a href={`/blog-category/${blog.category}`}>{blog.category}</a></div>
+                  <div className="mb-3 text-center"><Link to={`/blog-category/${blog.category}`}>{blog.category}</Link></div>
                   <h1 className="fw-bold text-center">{blog.title}</h1>
                   <div className="d-flex justify-content-center text-muted mt-4">
                     <span className="me-2"><small>{new Date(blog.createdAt).toLocaleDateString()}</small></span>
@@ -65,7 +65,7 @@ function SingleBlog() {
                 </div>
                 {/* img */}
                 <div className="mb-8">
-                  <img src={`http://localhost:4000/${blog.coverPicture}`} alt="Blog cover" className="img-fluid rounded" style={{ width: '848px', height: '389px', objectFit: 'cover' }} />
+                  <img src={`${process.env.REACT_APP_GREENATIK}/${blog.coverPicture}`} alt="Blog cover" className="img-fluid rounded" style={{ width: '848px', height: '389px', objectFit: 'cover' }} />
                 </div>
                 <div>
                   {/* Render HTML content */}
@@ -84,9 +84,9 @@ function SingleBlog() {
                   <div>
                     {/* socials */}
                     <span className="ms-2 text-muted">Share</span>
-                    <a href="#!" className="ms-2 text-muted"><i className="bi bi-facebook fs-6" /></a>
-                    <a href="#!" className="ms-2 text-muted"><i className="bi bi-twitter fs-6" /></a>
-                    <a href="#!" className="ms-2 text-muted"><i className="bi bi-linkedin fs-6" /></a>
+                    <Link to="#!" className="ms-2 text-muted"><i className="bi bi-facebook fs-6" /></Link>
+                    <Link to="#!" className="ms-2 text-muted"><i className="bi bi-twitter fs-6" /></Link>
+                    <Link to="#!" className="ms-2 text-muted"><i className="bi bi-linkedin fs-6" /></Link>
                   </div>
                 </div>
               </div>
