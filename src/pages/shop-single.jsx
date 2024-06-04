@@ -281,13 +281,15 @@ function Item({ _id, images, title, sizes, exchangeRate, currencySymbol }) {
                 <div className='related_row'>
                     <div className='price-tag-small'>
                         {
-                            sizes[0].salePrice ?
+                            sizes[0]?.salePrice ?
                                 <>
-                                    <span>{(sizes[0].salePrice * exchangeRate).toFixed(2)}{currencySymbol}</span>
-                                    <span>{(sizes[0].regularPrice * exchangeRate).toFixed(2)}{currencySymbol}</span>
+                                    <span>{(sizes[0]?.salePrice * exchangeRate).toFixed(2)}{currencySymbol}</span>
+
+                                    <span>{(sizes[0]?.regularPrice * exchangeRate).toFixed(2)}{currencySymbol}</span>
+                                    {console.log( exchangeRate)}
                                 </>
                                 :
-                                <span>{(sizes[0].regularPrice * exchangeRate).toFixed(2)}{currencySymbol}</span>
+                                <span>{(sizes[0]?.regularPrice * exchangeRate).toFixed(2)}{currencySymbol}</span>
                         }
                     </div>
                 </div>
