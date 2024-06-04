@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 
@@ -211,7 +211,7 @@ function Navbar({ onRateChange }) {
                 </ul>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="/all-posts">{t('navbar.recycling')}</a>
+            <Link className="nav-link" href="/all-posts">{t('navbar.recycling')}</Link>
             </li>
             <li className="nav-item">
                 <a className="nav-link" href="/blog">{t('navbar.blogs')}</a>
