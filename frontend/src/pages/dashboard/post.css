@@ -1,0 +1,150 @@
+.newproduct {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 80px;
+    margin: 120px 0;
+}
+
+.newproduct_container {
+    display: flex;
+    gap: 60px;
+
+    margin-top: 70px;
+}
+
+.newproduct_box {
+    border-radius: 11px;
+    border: 1px solid #F1F6FA;
+    background: #FFF;
+    box-shadow: 0px 4px 26px -10px rgba(0, 0, 0, 0.12);
+    padding: 60px;
+    width: 100%;
+}
+
+.newproduct_row {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+}
+
+.newproduct_row_item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    width: 100%;
+    margin-top: 20px;
+}
+
+.newproduct_row_item input {
+    padding: 15px 20px;
+    border-radius: 5px;
+    width: 100%;
+    border: 0.767px solid #D6D6D6;
+}
+
+.newproduct_row_item textarea {
+    padding: 15px 20px;
+    border-radius: 5px;
+    width: 100%;
+    border: 0.767px solid #D6D6D6;
+    resize: none;
+    height: 150px;
+}
+
+.newproduct_row_item select {
+    padding: 15px 20px;
+    border-radius: 5px;
+    width: 100%;
+    border: 0.767px solid #D6D6D6;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: auto;
+}
+
+.newproduct_dots {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    margin-top: 20px;
+}
+
+.newproduct_dot {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.newproduct_dot div {
+    position: relative;
+}
+
+.newproduct_dot div .border_shape {
+    border: 1px solid #CCC;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.newproduct_dot div .active_shape {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #CCC;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+}
+
+.create_button {
+    display: flex;
+    justify-content: center;
+
+    width: 290px;
+    padding: 13.151px 17.197px;
+    align-items: center;
+    gap: 10.116px;
+    border-radius: 7.452px;
+    background: #4EA933;
+    color: #fff;
+    margin-top: 2em;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+    .newproduct_row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .newproduct_container {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .newproduct {
+        padding: 0 1em;
+    }
+
+    .newpost_sidebar {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .newproduct_box {
+        padding: 20px;
+    }
+}

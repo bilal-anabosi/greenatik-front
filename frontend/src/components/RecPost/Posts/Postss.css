@@ -1,0 +1,81 @@
+.sa .card-body {
+background-color: #ffffff; 
+border-radius: 8px; 
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   
+}
+.sa{
+max-width: 93%; 
+margin: 0 auto; 
+}
+.sa .card{
+border: none;
+box-shadow: none;
+}
+.sa h1{
+color: #333333;
+font-size: larger;
+}
+.sa .btn{
+color: #9B8D15;
+border-radius: 5px;
+background-color: #FFF7AD ;
+font-family: "Outfit", sans-serif;
+border-color:#FFF7AD  ;
+margin-left: 5px;
+}
+.sa li{
+    font-size: large;
+    font-family:  'Inter', sans-serif;
+    color: #333333CC;
+    margin-left: 5px;
+    font-weight: 10%;
+}
+.sa .avatar-img{
+    border-radius: 80% !important;
+    border: 7px solid #e2e2e2 !important; 
+    height: 5.125rem;
+    width: 5.125rem;
+    border-radius: 50%;
+}
+.s .btn{
+color: #212121;
+background-color: #EEEEEE;
+border-color: #EEEEEE;
+}
+.s .btn-primary:hover ,
+.btn-primary:active  {
+    color: #212121;
+    background-color: #d0d0d0;
+    border-color: #EEEEEE;
+}
+.s .red-heart path {
+    fill:#cc0000; 
+}
+.red-heart {
+    color: #cc0000;
+}
+.sa .row {
+    text-align: center;
+}
+.sa h3{
+    font-size: large;
+}
+.sa p{
+    font-size: small;
+    font-family:  'Inter', sans-serif;
+}
+.sa .progress-bar{
+    background-color: #4EA933;
+    font-size: large;
+    font-family: "Outfit", sans-serif;
+}
+hr{
+    margin-top: 60px;
+}
+.x h1{
+    color: #333333;
+    font-size: xxx-large;
+    font-weight: bold;
+    font-family:  'Inter', sans-serif;
+    margin-left: 60px;
+}

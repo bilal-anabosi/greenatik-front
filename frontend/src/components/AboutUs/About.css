@@ -1,0 +1,217 @@
+.AAA .imggg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    width: 99vw;
+    height: 100%;
+    z-index: -2;
+}
+.AAA .bg-grad {
+    background: linear-gradient(150deg, #97c74e 0%, #2ab9a5 100%);
+    position: absolute;
+    width: 100%;
+    z-index: -1; 
+}
+.AAA .fw-bold{
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+}
+.AA {
+    position: absolute;
+    top: 70%;
+}
+.AA .text-grad {
+    background: linear-gradient(150deg, #97c74e 30%, #2ab9a5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Poppins', sans-serif;
+}
+.AA .col-md-6 {
+    font-size: 18px; 
+    font-family: 'Poppins', sans-serif; 
+    color: #333333; 
+    font-weight: bold;
+}
+.aaa {
+    position: absolute;
+    top: 110%;
+}
+.aaa .feature-box .feature-box-icon {
+    color: #41885d;
+    
+}
+.aaa .feature-box-title
+{
+    font-family: 'Poppins', sans-serif;
+}
+.aaa .feature-box-desc
+{
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+}
+.UU
+{
+    position: absolute;
+    top: 170%;
+}
+.UU .pre-title
+{
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 25px;
+    font-style: italic;
+    letter-spacing: 4px;
+}
+.UU .text-white
+{
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+
+}
+.UU p
+{
+    font-size: 20px;
+    font-family: 'Outfit', sans-serif;
+}
+.UU h1
+{
+    font-size: 22px;
+    font-family: 'Inter', sans-serif;
+    color: #8c8c8c;
+}
+.UU h2
+{
+    font-family: 'Poppins', sans-serif;
+}
+.UU hr
+{
+    margin-top: 1px;
+
+}
+.XX
+{
+    position: absolute;
+    top: 320%;
+}
+.XX h5{
+    font-family: 'Poppins', sans-serif;
+}
+.triangle-down {
+    position: relative;
+}
+.triangle-down:before {
+    content: '';
+    position: absolute;
+    bottom: -20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    border-width: 30px 30px 0;
+    border-style: solid;
+    border-color: #f1f1f1 transparent transparent;
+}
+.XX .t-primary{
+    color: #41885d;
+}
+.XX .background-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.XX .background-text {
+    position: absolute;
+    color: #375A4F;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.XX .ixx {
+    width: 50%;
+    height: auto; 
+    position: absolute;
+    z-index: 0; 
+    opacity: 0.8;
+}
+.XX h2
+{
+    position: absolute;
+    top: 120%;
+    text-align: center;
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 30px;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+.ZZ{
+    position: absolute;
+    top: 450%;
+}
+.team-avatar {
+    position: relative;
+    overflow: hidden;
+}
+.team-avatar:hover img {
+    filter: grayscale(0%); /* تغيير لون الصورة */
+}
+.team-avatar:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(150deg, #e0e3dc 30%, #b6b7b7 100%);
+}
+.iimmgg{
+    max-width: 50%;
+    height: auto;
+    border-radius: 50%;
+}
+.ZZ .team-name{
+    font-family: 'Poppins', sans-serif;
+}
+.ZZ .team-position{
+    font-family: 'Poppins', sans-serif;
+}
+.ZZ h2{
+    font-size: 40px;
+    text-align: center;
+}
+.ZZ h6{
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.sana{
+    position: absolute;
+    top: 580%;
+    width: 100%;
+}
+.t {
+    margin-bottom: 50px; 
+}
+@media screen and (max-width: 576px) {
+    .UU
+    {
+        position: absolute;
+        top: 230%;
+    }
+    .XX
+{
+    position: absolute;
+    top: 450%;
+}
+.ZZ{
+    position: absolute;
+    top: 610%;
+}
+.sana{
+    position: absolute;
+    top: 1100%;
+}
+}

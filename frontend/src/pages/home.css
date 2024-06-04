@@ -1,0 +1,25 @@
+/* Add this CSS to your component or external CSS file */
+.mesh-gradient {
+    background: url('../../public/img/Rectangle2.png') no-repeat center center;
+    background-size: cover;
+  }
+  .content-containerbil {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .content-imagebil {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .content-headingbil {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .content-paragraphbil {
+    font-size: 1rem;
+    opacity: 0.8;
+  }

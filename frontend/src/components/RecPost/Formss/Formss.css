@@ -1,0 +1,141 @@
+.so h1{
+color: #2e2e2e;
+font-family: "Inter", sans-serif;
+font-weight: bold;
+}
+.green-text {
+    color: #4EA933;
+}
+.red-txt
+{
+    color: #f25b1a;
+}
+.r .form-label {
+    color: #333333; 
+    font-size: 26px;
+    font-family: "poppins", sans-serif;
+    text-align:left; 
+    width: 95%; 
+    display: inline-block; 
+}
+.r .form-control
+{
+font-size: 17px;
+font-family: "poppins", sans-serif;
+}
+.n .form-control
+{
+font-size: 17px;
+font-family: "poppins", sans-serif;
+}
+.n .s-text
+{
+    color: #9AA1A5;
+    font-family: "Inter", sans-serif;
+    font-weight: lighter;
+    font-size: 30px;
+}
+.n h1
+{
+    font-weight: bolder;
+}
+.n h2{
+    color: #2e2e2e;
+    font-family: "poppins", sans-serif;
+    font-size: 25px;
+    /* text-align: center; */
+}
+.n .btn-group
+{
+    margin-left: 200px;
+}
+.n .btn
+{
+    color: #383838;
+    border-radius: 5px;
+    background-color: #dcdcdb ;
+    font-family: "Outfit", sans-serif;
+    border-color:#dcdcdb  ;
+}
+.n .form-label {
+    color: #333333; 
+    font-size: 26px;
+    font-family: "poppins", sans-serif;
+    text-align:left; 
+    width: 95%; 
+    display: inline-block; 
+}
+.map-container {
+    border: 5px solid #ccc; 
+    border-radius: 8px; 
+    overflow: hidden; 
+  }
+.n .m .btn-secondary
+{
+background-color: #4EA933;
+color: #ffffff;
+width: 262px;
+}
+.n .m .btn-primary
+{
+background-color: #071E2A;
+color: #ffffff;
+width: 262px;
+}
+.t-text
+{
+    font-size: 15px;
+    color: #333333CC;
+    font-family: "Inter", sans-serif;
+    margin-left: 5px;
+}
+.d .bi
+{
+margin-top: 8px;
+}
+.toast-container {
+    z-index: 10000; 
+  }
+.toast.show {
+    border-color: #6cab59; 
+}
+.toast-header {
+    background-color:  #6cab59; 
+    color: #fff;
+}
+.z .me-auto
+{
+    font-family: "Kodchasan", sans-serif;
+    font-size: large;
+    font-weight: lighter;
+}
+.f-6{
+    font-family: "inter", sans-serif;
+    font-size: small;
+}
+.toast-body {
+font-family: "inter", sans-serif;
+font-size: medium;
+font-weight: bold;
+}
+.mb-5 .text-danger {
+    color: #dc3545; 
+    font-family: "inter", sans-serif;
+    font-size: medium; 
+    font-weight: bold;
+    margin-top: 5px; 
+}
+.text-suc{
+    color: #4EA933;
+    font-family: "inter", sans-serif;
+    font-size: larger; 
+    font-weight: bold;
+    margin-left: 200px;
+}
+.t-text a {
+    color: #333333CC;; 
+    text-decoration: underline; 
+}
+.point{
+    font-size: small;
+}

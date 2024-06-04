@@ -1,0 +1,23 @@
+@media screen and (max-width: 599px) {
+    .login{
+        width: 80% !important;
+    }
+    .signup{
+       width: 100% !important;
+    }
+}
+
+
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+    .login{
+        width: 80% !important;
+    }
+    .signup{
+       width: 100% !important;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    
+}

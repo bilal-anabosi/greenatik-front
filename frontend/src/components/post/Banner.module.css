@@ -1,0 +1,73 @@
+.bannerBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 200px;
+  margin-top: 40px;
+}
+.bannerHeader {
+  color: #333;
+  font-family: Poppins;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 72px; /* 128.571% */
+  letter-spacing: 0.56px;
+  margin-bottom: 32px;
+}
+.bannerText {
+  color: #333;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px; /* 150% */
+}
+.greenWord {
+  color: #4ea933;
+}
+.pic {
+  display: block;
+}
+
+@media screen and (min-width: 320px) {
+  .bannerBox {
+    gap: 0px;
+  }
+  .pic {
+    display: none;
+    width: 250px;
+  }
+  .bannerHeader {
+    font-size: 28px;
+    line-height: 128.571%;
+  }
+  .bannerText {
+    font-size: 18px;
+    line-height: 150%;
+  }
+}
+@media screen and (min-width: 860px) {
+  .bannerBox {
+    gap: 100px;
+  }
+  .pic {
+    display: block;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .bannerBox {
+    gap: 100px;
+  }
+  .pic {
+    display: block;
+  }
+  .bannerHeader {
+    font-size: 56px;
+    line-height: 128.571%;
+  }
+  .bannerText {
+    font-size: 24px;
+    line-height: 150%;
+  }
+}

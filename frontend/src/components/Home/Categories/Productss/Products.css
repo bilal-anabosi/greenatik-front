@@ -1,0 +1,133 @@
+.kk h3
+{
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: xx-large;
+    margin-left: 20px;
+}
+.kk p{
+    color: #797878;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: lighter;
+    margin-left: 20px;
+}
+.ba h2
+{
+color: #071E2A;
+font-family: 'Poppins', sans-serif;
+font-size: 30px;
+}
+.ba p
+{
+    color: #375A4F;
+    font-weight: lighter;
+    font-family: 'Poppins', sans-serif;
+}
+.ba .btn
+{
+    background-color: #408458;
+    border-color: #408458;
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+}
+.ba .img-fluid
+{
+    width: 200%;
+    height: 200px;
+}
+.kk .custom-view-all-link {
+    font-size: 20px; 
+    font-family: 'Poppins', sans-serif;
+}
+.custom-border {
+    border-color: green !important;
+}
+.kk .slick-prev svg,
+.kk .slick-next svg {
+    margin-top: 6px;
+    margin-left: 7px;
+    fill: currentColor;
+}
+.modal-content {
+    background: linear-gradient(rgb(234, 234, 234), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0));
+    border-radius: 15px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.modal-content-new
+{
+background-color: #ffffff;
+}
+.modal-header {
+    border-bottom: none;
+}
+.modal-footer {
+    border-top: none;
+}
+.sos {
+    background-image: url("../../../../../public/img/cloude.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 1000px;
+    height: 400px;
+}
+.oo .modal-content-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.oo .modal-text {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin-right: 20px;
+    color: #071E2A;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-left: 50px;
+    
+}
+.oo .gradient-text {
+    background: linear-gradient(90deg, rgb(11, 55, 47) 0%, rgb(158, 178, 183) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.oo .modal-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.oo .modal-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+.oo .modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.kk .slick-list {
+    margin: 0;
+    padding: 0;
+}
+.kk .slick-track {
+    display: flex;
+    align-items: center; 
+}
+.slick-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}

@@ -1,0 +1,48 @@
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    border: 2px solid #DAE5DA;
+    border-radius: 50%; 
+}
+.feature-item h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    font-weight: bold;
+}
+.feature-item p{
+    font-family: 'Poppins', sans-serif;
+    color: #999999;
+}
+.feature-item {
+    width: 250px;
+    height: 250px;
+    border: 1px solid #DAE5DA;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.feature-item:hover {
+    background-color: #00B207;
+}
+.feature-item:hover h3, 
+.feature-item:hover p {
+    color: #ffffff; 
+}
+@media screen and (min-width: 350px) and (max-width: 700px) 
+{
+    .feature-item
+    {
+        margin-left: auto;
+        margin-right: auto; 
+        
+    }
+
+
+
+}

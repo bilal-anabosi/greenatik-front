@@ -1,0 +1,31 @@
+.j h2{
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    margin-top: 80px;
+    text-align: center;
+    font-size: xx-large;
+  }
+ 
+.j h4{
+    color: #797878;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: lighter;
+}
+.card-image {
+ width: 200px; /* تغيير عرض الصورة */
+  height: 200px;
+  padding: 50px;
+background-color: #efefef;
+border-radius: 20%;
+}
+.text-inheritt{
+  font-size: 30px;
+  font-family: 'DM Sans', sans-serif;
+  color: #262626;
+  text-align: center;
+  
+}
