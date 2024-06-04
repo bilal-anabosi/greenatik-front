@@ -5,6 +5,7 @@ import BlogRow from '../../../components/blog/BlogRow';
 import PaginationBlog from '../../../components/blog/PaginationBlog';
 import SearchForm from '../../../components/productsDash/SearchForm';
 import SelectOption from '../../../components/productsDash/SelectOption';
+import { Link } from 'react-router-dom';
 
 const AllBlogsDash = () => {
     const [blogs, setBlogs] = useState([]);

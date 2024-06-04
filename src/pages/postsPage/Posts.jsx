@@ -5,6 +5,7 @@ import DropdownMenu from "../../components/post/DropDowns.jsx";
 import PostModal from "../../components/post/PostModal.jsx";
 import Pagination from "../../components/post/Pagination.jsx";
 import Banner from "../../components/post/Banner.jsx";
+import { Link } from 'react-router-dom';
 function generateRandomProgress() {
   return Math.floor(Math.random() * 101); // Generates Link random number between 0 and 100
 }

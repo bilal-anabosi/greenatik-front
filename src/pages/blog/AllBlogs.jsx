@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PaginationBlog from '../../components/blog/PaginationBlog';
 import BlogCard from '../../components/blog/BlogCard';
 import CategoryCard from '../../components/blog/CategoryCard';
-
+import { Link } from 'react-router-dom';
 function AllBlogs() {
   const [blogs, setBlogs] = useState([]);
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import BlogCard from '../../components/blog/BlogCard.jsx';
 import PaginationBlog from '../../components/blog/PaginationBlog.jsx';
-
+import { Link } from 'react-router-dom';
 function BlogCategory() {
   const { category } = useParams();
   const [blogs, setBlogs] = useState([]);
