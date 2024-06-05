@@ -1,30 +1,27 @@
 import React from 'react';
 import './About.css';
+import { useTranslation } from 'react-i18next';
 
 function AboutIII() {
+    const { t, i18n } = useTranslation();
+
     return (
         <div className='XX'>
-<section className="bg-light triangle-down py-5">
-    <div className="row justify-content-center">
-        <div className="col-md-8 text-center">
-            <h5 className="m-0">At <strong className="t-primary bold"> GreeNatik </strong>, we are committed to transparency, integrity, and excellence in everything we do. We continuously strive to improve our processes and services, staying at the forefront of sustainable technology and practices. </h5>
-        </div>
-    </div>
-</section>
-<div className="background-container">
-<img src="/img/02.png" alt="..." className='ixx' />
-            <div className="background-text">
-                <p>
-                    Join us in our mission to create Link greener <br/> Whether you are looking to reduce your waste <br/> learn more about sustainability, <br/>
-                    or collaborate on Link project, <br/> GreeNatik is here to help. <br/> Together, we can make Link difference.
-                </p>
-                <h2>
-                Thank you for visiting GreeNatik. Let’s recycle and go green, one step at Link time.
-                </h2>
+            <section className="bg-light triangle-down py-5">
+                <div className="row justify-content-center">
+                    <div className="col-md-8 text-center">
+                        <h5 className="m-0" dangerouslySetInnerHTML={{ __html: t('aboutus.commitment') }}></h5>
+                    </div>
+                </div>
+            </section>
+            <div className="background-container">
+                <img src="/img/02.png" alt="..." className='ixx' />
+                <div className="background-text">
+                    <p dangerouslySetInnerHTML={{ __html: t('aboutus.joinMission') }}></p>
+                    <h2>{t('aboutus.thankYou')}</h2>
+                </div>
             </div>
-        </div>
         </div>
     );
 }
-
 export default AboutIII;

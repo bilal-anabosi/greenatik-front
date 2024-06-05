@@ -2,9 +2,11 @@ import React from 'react';
 import './Products.css';
 import { useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 const Shopping = () => {
     const [showModal, setShowModal] = useState(false);
+    const { t } = useTranslation();
 
     return (
         <div className="ba">
@@ -13,9 +15,9 @@ const Shopping = () => {
                     <div className="col-lg-12 mx-auto">
                         <div className="mb-4 bg-light d-lg-flex justify-content-between align-items-center rounded p-4">
                             <div className="p-lg-5 p-0">
-                                <h2 className="mb-2 fw-bold">One Stop Natural Shop</h2>
-                                <p className="mb-3 lead">Shopping for your furry friend? Find Green,<br/> treats, and more in one easy spot.</p>
-                                <Link className="btn btn-dark" onClick={() => setShowModal(true)}>Get Points</Link>
+                                <h2 className="mb-2 fw-bold">{t('Categories.Shop')}</h2>
+                                <p className="mb-3 lead">{t('Categories.Shopping')}</p>
+                                <a className="btn btn-dark" onClick={() => setShowModal(true)}>{t('Categories.Get')}</a>
                             </div>
                         <div className="p-lg-4 d-lg-block d-none">
                     <img src="/pics/images/store.png" alt="..." className="img-fluid" />
@@ -36,7 +38,7 @@ const Shopping = () => {
                 <div className='oo'>
                 <div className="modal-content-body">
                     <div className="modal-text gradient-text">
-                        <p>For every purchase you make, you earn points that can be redeemed for discounts on future purchases!</p>
+                        <p>{t('Categories.title')}</p>
                     </div>
                     <div className="modal-image">
                         <img src="/pics/images/sss1.png" alt="Discount" />

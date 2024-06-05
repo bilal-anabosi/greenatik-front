@@ -146,6 +146,7 @@
     font-size: 30px;
     font-style: italic;
     letter-spacing: 2px;
+    margin-left: 200px;
 }
 .ZZ{
     position: absolute;
@@ -214,4 +215,11 @@
     position: absolute;
     top: 1100%;
 }
+}
+.XX {
+    justify-content: center;
+    margin-left: 0px;
+}
+[dir="rtl"] .XX {
+    margin-right: auto; 
 }

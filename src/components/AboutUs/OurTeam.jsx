@@ -2,6 +2,7 @@
 import React from 'react';
 import './About.css';
 import TeamList from './TeamList';
+import { useTranslation } from 'react-i18next';
 
 function OurTeam() {
   const teamMembers = [
@@ -47,29 +48,29 @@ function OurTeam() {
     }
   ];
 
+  const { t } = useTranslation();
 
   return (
     <div className='container'>
     <div className='ZZ'>
-        <section className="team social-hover team-overlay pb-0">
-          <div className="row">
-            <div className="col-12 col-lg-8 mx-auto">
-              <div className="title text-center">
-                <h2>Our Leadership</h2>
-              </div>
+      <section className="team social-hover team-overlay pb-0">
+        <div className="row">
+          <div className="col-12 col-lg-8 mx-auto">
+            <div className="title text-center">
+              <h2>{t('aboutus.ourLeadership')}</h2>
             </div>
           </div>
-          <TeamList teamMembers={teamMembers} />
-          <div className="row">
-            <div className="col-12 col-lg-8 mx-auto text-center mt-5">
-              <br/><br/><br/>
-              <h6>For more information, please contact us at (contact information) or follow us on (social media links).</h6>
-            </div>
+        </div>
+        <TeamList teamMembers={teamMembers} />
+        <div className="row">
+          <div className="col-12 col-lg-8 mx-auto text-center mt-5">
+            <br/><br/><br/>
+            <h6>{t('aboutus.contactInfo')}</h6>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
+  </div>
   );
 }
-
 export default OurTeam;

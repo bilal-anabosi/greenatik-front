@@ -169,9 +169,9 @@ const FormII = ({postId}) => {
                             value={material}
                             onChange={(e) => setMaterial(e.target.value)}
                         />
-                    </div>
+                    </div> 
                     <div className="col-sm-6">
-                        <label className="form-label">Quantity <span className="red-txt">*</span> <span className="point"> Each 1 Kg = 200 points.</span></label>
+                        <label className="form-label">Quantity <span className="red-txt">*</span> <span className="point"> Each 1 Kg = 1 points.</span></label>
                         <input
                             type="text"
                             className="form-control"

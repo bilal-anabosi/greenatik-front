@@ -1,7 +1,9 @@
 import React from 'react'
 import './About.css';
+import { useTranslation } from 'react-i18next';
 
 function About() {
+    const { t } = useTranslation();
 return (
 <div>
     <div className='AAA'>
@@ -11,7 +13,7 @@ return (
                     <div className="container">
                         <div className="row all-text-white">
                             <div className="col-md-12 align-self-center position-relative">
-                                <h1 className="fw-bold display-1 mb-2 mb-md-n4 mt-9">About GreeNatik</h1>
+                                <h1 className="fw-bold display-1 mb-2 mb-md-n4 mt-9">{t('aboutus.about')}</h1>
                             </div>
                         </div>
                     </div>

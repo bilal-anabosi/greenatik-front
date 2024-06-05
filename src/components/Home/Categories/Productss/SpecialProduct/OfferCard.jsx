@@ -4,7 +4,7 @@ import '../Products.css';
 import ProductCards from '../../../../wide/ProductCards';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const OfferCard = ( {exchangeRate}) => {
 
@@ -13,7 +13,7 @@ const OfferCard = ( {exchangeRate}) => {
     useEffect(() => {
         async function fetchLatestProductsWithSale() {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/store/sale-products`);
+            const response = await axios.get('http://localhost:4000/store/sale-products');
             setLatestProductsWithSale(response.data.latestProductsWithSale);
         } 
         catch (error) {
@@ -29,6 +29,8 @@ const handleCategoryClick = (category) => {
   navigate(`/wide?category=${category}`);
 };
 
+const { t } = useTranslation();
+
 return (
 <div>
     <div className="kk">
@@ -38,14 +40,14 @@ return (
                     <div className="col-12">
                         <div className="d-md-flex justify-content-between align-items-center mb-8">
                             <div>
-                                <h3 className="mb-1">Special Offers of the View All Week!</h3>
-                                <p>Get exclusive ongoing offers, deals, and discount codes of shopping</p>
+                                <h3 className="mb-1">{t('Categories.S1')}</h3>
+                                <p>{t('Categories.S2')}</p>
                             </div>
                         <div>
-                        <Link to="# " className="custom-view-all-link" onClick={() => handleCategoryClick('Sale')}>
-                            View All
+                        <a href="# " className="custom-view-all-link" onClick={() => handleCategoryClick('Sale')}>
+                        {t('Categories.View All')}
                         <i className="feather-icon icon-chevron-right" />
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>

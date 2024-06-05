@@ -1,9 +1,16 @@
 import React from 'react';
 import './About.css';
+import { useTranslation } from 'react-i18next';
 
 function AboutII() {
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = (lang) => {
+        i18n.changeLanguage(lang);
+    };
+
     return (
-        <div className ="container">
+        <div className="container">
             <div className='UU'>
                 <section className="why-us p-0">
                     <div className="container">
@@ -15,9 +22,9 @@ function AboutII() {
                             <div className="col-lg-6 col-md-12 bg-dark px-4 py-5 p-lg-5 text-white">
                                 <div className="h-100">
                                     <div className="title text-start p-0">
-                                        <span className="pre-title">Ok! So Who We Are?</span>
-                                        <h2 className="text-white">GreeNatik is Link dedicated team of environmental enthusiasts, engineers, and educators committed to making Link positive impact on the environment. </h2>
-                                        <p>With years of experience in the recycling and sustainability sector, we bring expertise and innovation to every project we undertake. In addition to our commitment to environmental initiatives, we are proud to offer Link range of eco-friendly products.</p>
+                                        <span className="pre-title">{t('aboutus.whoWeAre')}</span>
+                                        <h2 className="text-white">{t('aboutus.whoWeAreDesc')}</h2>
+                                        <p>{t('aboutus.experienceDesc')}</p>
                                     </div>
                                     <div className="row">
                                     </div>
@@ -29,10 +36,10 @@ function AboutII() {
                             <div className="col-lg-6 col-md-12 bg-light px-4 py-5 p-lg-5">
                                 <div className="h-100">
                                     <div className="title text-center p-0">
-                                        <span className="pre-title">Ok! So why our client trust us?</span>
-                                        <h2>From reusable bags to sustainable packaging solutions, our products are carefully curated to align with our mission of promoting sustainability and reducing environmental impact.</h2>
+                                        <span className="pre-title">{t('aboutus.clientTrust')}</span>
+                                        <h2>{t('aboutus.trustDesc')}</h2>
                                         <hr />
-                                        <h1>With GreeNatik, you not only support our efforts in recycling and sustainability but also contribute to creating Link greener and more sustainable future through your everyday choices.</h1>
+                                        <h1>{t('aboutus.supportDesc')}</h1>
                                     </div>
                                 </div>
                             </div>

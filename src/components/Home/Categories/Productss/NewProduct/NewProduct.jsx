@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import '../Products.css';
 import ProductCards from '../../../../wide/ProductCards';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 const NewProduct = ({exchangeRate}) => {
 
@@ -10,7 +11,7 @@ const NewProduct = ({exchangeRate}) => {
         useEffect(() => {
             async function fetchLatestProducts() {
                 try {
-                    const response = await axios.get(`${process.env.REACT_APP_GREENATIK}/store/latest-products`);
+                    const response = await axios.get('http://localhost:4000/store/latest-products');
                         setLatestProducts(response.data.latestProducts);
             } 
             catch (error) {
@@ -20,6 +21,8 @@ const NewProduct = ({exchangeRate}) => {
 
 fetchLatestProducts();
 }, []);
+
+const { t } = useTranslation();
 
 return (
     <div className="kk">
@@ -34,8 +37,8 @@ return (
                             <div className="mb-6 d-xl-flex justify-content-between align-items-center">
                             {/* heading */}
                                 <div className="mb-5 mb-xl-0">
-                                    <h3 className="mb-0">New Products</h3>
-                                        <p className="mb-0">New products with updated stocks</p>
+                                    <h3 className="mb-0">{t('Categories.New1')}</h3>
+                                        <p className="mb-0">{t('Categories.New2')}</p>
                                 </div>
                             <div>
                         </div>
