@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 const Discount = ({ onUpdate, totalPoints }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isDiscountApplied, setIsDiscountApplied] = useState(true);
   const [selectedPoints, setSelectedPoints] = useState("");
   const [errorMessage, setErrorMessage] = useState('');
   const [showNotification, setShowNotification] = useState(false);
-
+  const { t, i18n } = useTranslation();
+  const handleLanguageChange = (lng) => {
+  i18n.changeLanguage(lng);
+};
   const handleLinkClick = () => {
     setIsClicked(!isClicked);
     setSelectedPoints("");
@@ -27,15 +31,15 @@ const Discount = ({ onUpdate, totalPoints }) => {
 
   const handleApplyDiscount = () => {
     if (selectedPoints === "") {
-      setErrorMessage("Please enter points to use for the discount.");
+      setErrorMessage(t('discount.errorEmptyPoints'));
       return;
     }
     if (selectedPoints === 0) {
-      setErrorMessage("Please select points to use for the discount.");
+      setErrorMessage(t('discount.errorZeroPoints'));
       return;
     }
     if (totalPoints === 0) {
-      setErrorMessage("No points available.");
+      setErrorMessage(t('discount.errorNoPoints'));
       return;
     }
     setErrorMessage("");
@@ -48,12 +52,12 @@ const Discount = ({ onUpdate, totalPoints }) => {
     setSelectedPoints("");
   }, []);
 
-  const discountAmount = isDiscountApplied ? selectedPoints/1  : 0;
+  const discountAmount = isDiscountApplied ? selectedPoints / 1 : 0;
 
   return (
     <div className="accordion-item py-4">
-      <Link
-        to="#!"
+      <a
+        href="#!"
         className={`text-inherit h5 ${isClicked ? 'text-success' : ''}`}
         data-bs-toggle="collapse"
         data-bs-target="#discountCollapse"
@@ -62,8 +66,8 @@ const Discount = ({ onUpdate, totalPoints }) => {
         onClick={handleLinkClick}
       >
         <i className="bi bi-cash" style={{ color: 'gray' }}></i>
-        Discount
-      </Link>
+        {t('discount.title')}
+      </a>
       {isClicked && (
         <div
           id="discountCollapse"
@@ -84,21 +88,21 @@ const Discount = ({ onUpdate, totalPoints }) => {
                         onChange={handleDiscountToggle}
                       />
                       <label className="form-check-label" htmlFor="discountCheckbox">
-                        use point {isDiscountApplied ? "" : ""}
+                        {t('discount.usePoints')}
                       </label>
                     </div>
                     {isDiscountApplied && (
                       <>
                         <div className="d-flex align-items-center justify-content-between mb-2">
-                          <div>Discount Amount: ${discountAmount.toFixed(2)}</div>
+                          <div>{t('discount.discountAmount')}: ${discountAmount.toFixed(2)}</div>
                         </div>
                         <div className="d-flex align-items-center justify-content-between mb-2">
-                          <div>Total Points: {totalPoints}</div>
+                          <div>{t('discount.totalPoints')}: {totalPoints}</div>
                         </div>
                         <div className="d-flex align-items-center justify-content-between mb-2">
                           <div>
                             <label htmlFor="pointsInput" className="form-label">
-                              Points to Use:
+                              {t('discount.pointsToUse')}
                             </label>
                             <input
                               type="number"
@@ -113,11 +117,13 @@ const Discount = ({ onUpdate, totalPoints }) => {
                           </div>
                         </div>
                         <div className="d-flex justify-content-end">
-                          <button className="btn btn-primary" onClick={handleApplyDiscount}>Apply Discount</button>
+                          <button className="btn btn-primary" onClick={handleApplyDiscount}>
+                            {t('discount.applyButton')}
+                          </button>
                         </div>
                         {showNotification && (
                           <div className="alert alert-danger mt-3" role="alert">
-                            The entered points exceed the available points!
+                            {t('discount.notification')}
                           </div>
                         )}
                         {errorMessage && (

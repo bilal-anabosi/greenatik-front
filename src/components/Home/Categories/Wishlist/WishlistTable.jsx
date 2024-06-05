@@ -2,12 +2,18 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 const WishlistTable = ({ exchangeRate }) => {
+  const { t, i18n } = useTranslation();
   const [wishlist, setWishlist] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [currencySymbol, setCurrencySymbol] = useState('$'); 
   const token = localStorage.getItem('userToken');
   const navigate = useNavigate();
+  const handleLanguageChange = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
 
   useEffect(() => {
     const fetchWishlistData = async () => {
@@ -73,7 +79,7 @@ const WishlistTable = ({ exchangeRate }) => {
     }
 
     if (!status) {
-      setErrorMessage('Product is out of stock and cannot be added to cart.');
+      setErrorMessage(t('wishlistTable.outOfStockMessage'));
       return;
     }
 
@@ -111,19 +117,18 @@ const WishlistTable = ({ exchangeRate }) => {
         <div className="row">
           <div className="col-lg-12">
             <div className="mb-8">
-              <h1 className="mb-1">My Wishlist</h1>
-              <p>There are {wishlist.length} products in this wishlist.</p>
+            <h1 className="mb-1">{t('wishlistTable.title')}</h1>
+              <p>{t('wishlistTable.description', { count: wishlist.length })}</p>
             </div>
             <div className="table-responsive">
               <table className="table text-nowrap table-padding">
                 <thead className="table-light">
                   <tr>
-                    <th></th>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                    <th>Remove</th>
+                  <th>{t('wishlistTable.product')}</th>
+                    <th>{t('wishlistTable.price')}</th>
+                    <th>{t('wishlistTable.status')}</th>
+                    <th>{t('wishlistTable.actions')}</th>
+                    <th>{t('wishlistTable.remove')}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -153,7 +158,8 @@ const WishlistTable = ({ exchangeRate }) => {
                       </td>
                       <td className="align-middle">
                         <span className={`badge ${item.product.status ? "bg-success" : "bg-danger"}`}>
-                          {item.product.status ? "In Stock" : "Out of Stock"}
+                        {item.product.status ? t('wishlistTable.inStock') : t('wishlistTable.outOfStock')}
+
                         </span>
                       </td>
                       <td className="align-middle">
@@ -161,7 +167,7 @@ const WishlistTable = ({ exchangeRate }) => {
                           className="btn btn-primary btn-sm" 
                           onClick={() => handleAddToCart(item.product._id, item.product.size, item.product.status)}
                         >
-                          Add to Cart
+                           {t('wishlistTable.addToCart')}
                         </button>
                       </td>
                       <td className="align-middle">
@@ -169,7 +175,7 @@ const WishlistTable = ({ exchangeRate }) => {
                           className="text-muted"
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
-                          aria-label="Delete"
+                          aria-label={t('wishlistTable.delete')}
                           style={{
                             border: 'none',
                             background: 'none',
@@ -198,8 +204,8 @@ const WishlistTable = ({ exchangeRate }) => {
                 <div className="toast-header">
                   <img src="/favicon.ico" width={32} height={32} className="rounded me-2" alt="" />
                   <strong className="me-auto">GreeNatik</strong>
-                  <small>Now</small>
-                  <button type="button" className="btn-close" onClick={() => setErrorMessage('')} aria-label="Close"></button>
+                  <small>{t('wishlistTable.now')}</small>
+                  <button type="button" className="btn-close" onClick={() => setErrorMessage('')} aria-label={t('wishlistTable.close')}></button>
                 </div>
                 <div className="toast-body">
                   {errorMessage}

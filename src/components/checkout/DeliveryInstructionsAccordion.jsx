@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 const DeliveryInstructionsAccordion = ({ onUpdate }) => {
   const [deliveryInstructions, setDeliveryInstructions] = useState('');
-  const [isClicked, setIsClicked] = useState(false); // تعيين قيمة افتراضية للحالة هنا
-
+  const [isClicked, setIsClicked] = useState(false);
+  const { t, i18n } = useTranslation();
+  const handleLanguageChange = (lng) => {
+  i18n.changeLanguage(lng);
+};
   const handleInputChange = (event) => {
     setDeliveryInstructions(event.target.value);
-    // Pass the updated delivery instructions back to the parent component (Checkout)
     onUpdate({ deliveryInstructions: event.target.value });
   };
 
@@ -15,14 +18,13 @@ const DeliveryInstructionsAccordion = ({ onUpdate }) => {
   };
 
   useEffect(() => {
-    // تعيين القيمة الافتراضية عند دخول المكون
     setIsClicked(false);
-  }, []); // يتم تنفيذ هذا فقط عندما يتم تحميل المكون لأول مرة
+  }, []);
 
   return (
     <div className="accordion-item py-4">
-      <Link
-        to="#!"
+      <a
+        href="#!"
         className={`text-inherit h5 ${isClicked ? 'text-success' : ''}`}
         data-bs-toggle="collapse"
         data-bs-target="#flush-collapseThree"
@@ -31,8 +33,8 @@ const DeliveryInstructionsAccordion = ({ onUpdate }) => {
         onClick={handleLinkClick}
       >
         <i className="bi bi-clock" style={{ color: 'gray' }}></i>
-        Delivery instructions
-      </Link>
+        {t('deliveryInstructions.title')}
+      </a>
       <div
         id="flush-collapseThree"
         className={`accordion-collapse collapse ${isClicked ? 'show' : ''}`}
@@ -41,28 +43,28 @@ const DeliveryInstructionsAccordion = ({ onUpdate }) => {
       >
         <div className="mt-5">
           <label htmlFor="DeliveryInstructions" className="form-label sr-only">
-            Delivery instructions
+            {t('deliveryInstructions.label')}
           </label>
           <textarea
             className="form-control"
             id="DeliveryInstructions"
             rows="3"
-            placeholder="Write delivery instructions"
+            placeholder={t('deliveryInstructions.placeholder')}
             value={deliveryInstructions}
             onChange={handleInputChange}
           ></textarea>
-          <p className="form-text">Add instructions for how you want your order shopped and/or delivered</p>
+          <p className="form-text">{t('deliveryInstructions.helpText')}</p>
           <div className="mt-5 d-flex justify-content-end">
-            <Link
-              to="#!"
+            <a
+              href="#!"
               className="btn btn-primary ms-2"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseFour"
               aria-expanded="false"
               aria-controls="flush-collapseFour"
             >
-              Next
-            </Link>
+              {t('deliveryInstructions.nextButton')}
+            </a>
           </div>
         </div>
       </div>
