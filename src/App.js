@@ -53,6 +53,7 @@ function AppContent() {
   const location = useLocation();
   const shouldShowFooter = location.pathname !== '/about-us';
   const [exchangeRate, setExchangeRate] = useState(1);
+  const token = localStorage.getItem('userToken');
   const handleRateChange = (newRate) => {
     console.log('Received new rate:', newRate);
 
@@ -68,7 +69,7 @@ function AppContent() {
         <Route path="/cart" element={<Cart exchangeRate={exchangeRate} />} />
         <Route path='/checkout' element={<Checkout exchangeRate={exchangeRate} />} />
         <Route path='/sign-up' element={<SignUpPage />} />
-        <Route path='/login' element={<LoginPage />} />
+        <Route path='/login' element={!token?<LoginPage  />:<Home />} />
         <Route path='/forget' element={<ForgetPage />} />
         <Route path='/profile' element={<Profile exchangeRate={exchangeRate} />} />
         <Route path='/set-password' element={<SetPasswordPage />} />

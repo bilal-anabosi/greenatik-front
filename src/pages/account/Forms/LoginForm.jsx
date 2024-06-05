@@ -23,12 +23,14 @@ export default function LoginForm() {
         setUserToken(data.token);
         setSuccessMessage('Login successful! Redirecting...');
         setErrorMessage('');
+   
 
-        if (data.user && data.user.role === 'admin') {
-          navigate('/store');
+        if (data.user && data.user.role == 'admin') {
+          navigate('/dashboard/products');
         } else {
-          navigate('/store');
+          navigate('/home');
         }
+        window.location.reload();
       } else if (status === 401) {
         setErrorMessage('Invalid email or password');
       }

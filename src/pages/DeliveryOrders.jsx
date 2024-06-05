@@ -120,7 +120,7 @@ const DeliveryOrders = ({exchangeRate}) => {
                   {currentCustomers.map((customer, index) => (
                     <tr key={index}>
                       <td>
-                        <Link to="#" className="text-inherit" onClick={() => handleCustomerClick(customer)}>
+                        <Link to={`/dashboard/order-details/${customer.numOrder}`} className="text-inherit" onClick={() => handleCustomerClick(customer)}>
                           {customer.user ? customer.user.name : 'N/A'}
                         </Link>
                       </td>
